@@ -68,6 +68,13 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CompteAll\Compte.cs" />
+    <Compile Include="Classes\CompteAll\CompteDB.cs" />
+    <Compile Include="Classes\TransactionAll\Transaction.cs" />
+    <Compile Include="Classes\TransactionAll\TransactionDB.cs" />
+    <Compile Include="Classes\userAll\User.cs" />
+    <Compile Include="Classes\userAll\userDB.cs" />
+    <Compile Include="Database\DatabaseManager.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
