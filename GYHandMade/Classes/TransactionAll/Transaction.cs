@@ -14,6 +14,8 @@ namespace GYProject.Classes
         public int ID { get; set; }
         public string Description { get; set; }
         public string Type { get; set; }
+        public string category { get; set; }
+
         public decimal Montant { get; set; }
         public DateTime Date { get; set; }
 
