@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="guna2TextBox2.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="desc.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAABSNJREFUaEPtWc9vFVUYrUFBoxF/gLjUpdGof4ViUBB2KO4kuhEadAu6U8EVSRO7
+        DwAACw8BkvkDpQAABSNJREFUaEPtWc9vFVUYrUFBoxF/gLjUpdGof4ViUBB2KO4kuhEadAu6U8EVSRO7
         IoGUN+8m7Zt5pY8AkRcSNcijiBtLaVlBXRhkB0Ja8zxn7rmdgb5XZubOawvhJF/6er473497v/tj7vQ9
         wsMKY8wLQVD/MAjCA9VqNBYE0aVqNbyBv3co9nc4YXXhgUol2jI0dOx5Pb68OHSo+aQx9U8Q2EkE+B+k
         nUeQ4BwSPIHfOxqNxhqZXTqg959CEF9C/kqCCm/j72nIXo5MpTLyGnt8cHDwCQp/k6POmHAf2jX1jEts
@@ -146,10 +146,10 @@
         +8QjPPDo6/sfU9XsgNfTGwcAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="guna2TextBox1.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="amount.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAABSNJREFUaEPtWc9vFVUYrUFBoxF/gLjUpdGof4ViUBB2KO4kuhEadAu6U8EVSRO7
+        EAAACxABrSO9dQAABSNJREFUaEPtWc9vFVUYrUFBoxF/gLjUpdGof4ViUBB2KO4kuhEadAu6U8EVSRO7
         IoGUN+8m7Zt5pY8AkRcSNcijiBtLaVlBXRhkB0Ja8zxn7rmdgb5XZubOawvhJF/6er473497v/tj7vQ9
         wsMKY8wLQVD/MAjCA9VqNBYE0aVqNbyBv3co9nc4YXXhgUol2jI0dOx5Pb68OHSo+aQx9U8Q2EkE+B+k
         nUeQ4BwSPIHfOxqNxhqZXTqg959CEF9C/kqCCm/j72nIXo5MpTLyGnt8cHDwCQp/k6POmHAf2jX1jEts

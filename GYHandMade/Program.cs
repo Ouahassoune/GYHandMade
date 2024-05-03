@@ -1,5 +1,7 @@
-﻿using System;
+﻿using GYProject.Classes.userAll;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
@@ -15,7 +17,14 @@ namespace GYHandMade
         [STAThread]
         static void Main()
         {
-            SetProcessDPIAware();
+            TestDatabaseConnection();
+        }
+
+        static void TestDatabaseConnection()
+        {
+            
+        
+      SetProcessDPIAware();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

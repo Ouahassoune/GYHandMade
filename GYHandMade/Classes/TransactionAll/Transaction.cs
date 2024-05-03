@@ -16,18 +16,19 @@ namespace GYProject.Classes
         public string Type { get; set; }
         public string category { get; set; }
 
-        /* *************** I LOOOOOOVVEEEE YOUSSEFFFFF  *********************************/
+        /* ***************  YOUSSEFFFFF  GHIZLANEEEE *********************************/
 
         public decimal Montant { get; set; }
         public DateTime Date { get; set; }
 
         public Transaction(){  }
-        public Transaction(string Description, decimal montant,string type)
+        public Transaction(string Description, decimal montant,string type,DateTime date,string category)
         {
             this.Type = type;
             this.Description = Description;
             Montant = montant;
-            Date = DateTime.Now; // Date actuelle
+            Date =date; // Date actuelle
+            this.category = category;
         }
 
 
