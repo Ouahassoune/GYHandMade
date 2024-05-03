@@ -8,23 +8,63 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GYHandMade.UserControls;
+using GYProject.Classes;
+using GYProject.Classes.userAll;
 
 namespace GYHandMade
 {
     public partial class Form1 : Form
 
-    {
+    {  internal User user= new User(); 
         UserControls.Dashboard Udashboard = new UserControls.Dashboard();
         UserControls.AddTransaction UAddTransaction = new UserControls.AddTransaction();
    
         UserControls.ToHistory UHistory = new UserControls.ToHistory();
         UserControls.AddCompte UCompte = new UserControls.AddCompte();
+      
         public Form1()
         {
             InitializeComponent();
             MainPanel.Controls.Add(Udashboard);
             Udashboard.Dock = DockStyle.Fill;
+            user=userDB.GetUserById(9);
+            label2.Text = "Hello, "+user.nom+"!";
+            lastTransaction();
         }
+        //remplir la liste des 3 transactions les plus recentes
+        public void lastTransaction()
+        {
+            // Récupérer les trois dernières transactions de l'utilisateur
+            List<Transaction> liste = user.GetLastThreeTransactions();
+
+            // Vérifier si la liste contient au moins une transaction
+            if (liste.Count > 0)
+            {
+                // Remplir le premier label avec les données de la première transaction
+                amount1.Text = liste[0].Montant.ToString();
+                cat1.Text = liste[0].category;
+                date1.Text = liste[0].Date.ToString();
+            }
+
+            // Vérifier si la liste contient au moins deux transactions
+            if (liste.Count > 1)
+            {
+                // Remplir le deuxième label avec les données de la deuxième transaction
+                amount2.Text = liste[1].Montant.ToString();
+                cat2.Text = liste[1].category;
+                date2.Text = liste[1].Date.ToString();
+            }
+
+            // Vérifier si la liste contient au moins trois transactions
+            if (liste.Count > 2)
+            {
+                // Remplir le troisième label avec les données de la troisième transaction
+                amount3.Text = liste[2].Montant.ToString();
+                cat3.Text = liste[2].category;
+                date3.Text = liste[2].Date.ToString();
+            }
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
