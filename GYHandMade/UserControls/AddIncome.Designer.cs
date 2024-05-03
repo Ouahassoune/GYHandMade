@@ -28,67 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddIncome));
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.date = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.amount = new Guna.UI2.WinForms.Guna2TextBox();
             this.Label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.desc = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GradientTileButton1 = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.SuspendLayout();
             // 
-            // guna2DateTimePicker1
+            // date
             // 
-            this.guna2DateTimePicker1.BorderColor = System.Drawing.Color.SlateBlue;
-            this.guna2DateTimePicker1.BorderRadius = 20;
-            this.guna2DateTimePicker1.BorderThickness = 1;
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.CheckedState.Parent = this.guna2DateTimePicker1;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.Indigo;
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.HoverState.Parent = this.guna2DateTimePicker1;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(457, 214);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.ShadowDecoration.Parent = this.guna2DateTimePicker1;
-            this.guna2DateTimePicker1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(443, 63);
-            this.guna2DateTimePicker1.TabIndex = 0;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2024, 5, 2, 18, 15, 31, 726);
+            this.date.BorderColor = System.Drawing.Color.SlateBlue;
+            this.date.BorderRadius = 20;
+            this.date.BorderThickness = 1;
+            this.date.Checked = true;
+            this.date.CheckedState.Parent = this.date;
+            this.date.FillColor = System.Drawing.Color.White;
+            this.date.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date.ForeColor = System.Drawing.Color.Indigo;
+            this.date.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.date.HoverState.Parent = this.date;
+            this.date.Location = new System.Drawing.Point(457, 214);
+            this.date.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.date.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.date.Name = "date";
+            this.date.ShadowDecoration.Parent = this.date;
+            this.date.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
+            this.date.Size = new System.Drawing.Size(443, 63);
+            this.date.TabIndex = 0;
+            this.date.Value = new System.DateTime(2024, 5, 2, 18, 15, 31, 726);
             // 
-            // guna2TextBox1
+            // amount
             // 
-            this.guna2TextBox1.Animated = true;
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.Indigo;
-            this.guna2TextBox1.BorderRadius = 25;
-            this.guna2TextBox1.BorderThickness = 2;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.IconLeft = ((System.Drawing.Image)(resources.GetObject("guna2TextBox1.IconLeft")));
-            this.guna2TextBox1.IconLeftSize = new System.Drawing.Size(42, 42);
-            this.guna2TextBox1.Location = new System.Drawing.Point(457, 108);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(443, 59);
-            this.guna2TextBox1.TabIndex = 1;
+            this.amount.Animated = true;
+            this.amount.BorderColor = System.Drawing.Color.Indigo;
+            this.amount.BorderRadius = 25;
+            this.amount.BorderThickness = 2;
+            this.amount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.amount.DefaultText = "";
+            this.amount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.amount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.amount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.amount.DisabledState.Parent = this.amount;
+            this.amount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.amount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.amount.FocusedState.Parent = this.amount;
+            this.amount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.amount.HoverState.Parent = this.amount;
+            this.amount.IconLeftSize = new System.Drawing.Size(42, 42);
+            this.amount.Location = new System.Drawing.Point(457, 108);
+            this.amount.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.amount.Name = "amount";
+            this.amount.Padding = new System.Windows.Forms.Padding(10);
+            this.amount.PasswordChar = '\0';
+            this.amount.PlaceholderText = "";
+            this.amount.SelectedText = "";
+            this.amount.ShadowDecoration.Parent = this.amount;
+            this.amount.Size = new System.Drawing.Size(443, 59);
+            this.amount.TabIndex = 1;
             // 
             // Label1
             // 
@@ -123,35 +121,34 @@
             this.label3.TabIndex = 37;
             this.label3.Text = "Description";
             // 
-            // guna2TextBox2
+            // desc
             // 
-            this.guna2TextBox2.Animated = true;
-            this.guna2TextBox2.BorderColor = System.Drawing.Color.Indigo;
-            this.guna2TextBox2.BorderRadius = 25;
-            this.guna2TextBox2.BorderThickness = 2;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.FocusedState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.IconLeft = ((System.Drawing.Image)(resources.GetObject("guna2TextBox2.IconLeft")));
-            this.guna2TextBox2.IconLeftSize = new System.Drawing.Size(42, 42);
-            this.guna2TextBox2.Location = new System.Drawing.Point(457, 585);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.Padding = new System.Windows.Forms.Padding(9, 9, 9, 9);
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Size = new System.Drawing.Size(388, 51);
-            this.guna2TextBox2.TabIndex = 36;
+            this.desc.Animated = true;
+            this.desc.BorderColor = System.Drawing.Color.Indigo;
+            this.desc.BorderRadius = 25;
+            this.desc.BorderThickness = 2;
+            this.desc.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.desc.DefaultText = "";
+            this.desc.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.desc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.desc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.desc.DisabledState.Parent = this.desc;
+            this.desc.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.desc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.desc.FocusedState.Parent = this.desc;
+            this.desc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.desc.HoverState.Parent = this.desc;
+            this.desc.IconLeftSize = new System.Drawing.Size(42, 42);
+            this.desc.Location = new System.Drawing.Point(457, 585);
+            this.desc.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.desc.Name = "desc";
+            this.desc.Padding = new System.Windows.Forms.Padding(9);
+            this.desc.PasswordChar = '\0';
+            this.desc.PlaceholderText = "";
+            this.desc.SelectedText = "";
+            this.desc.ShadowDecoration.Parent = this.desc;
+            this.desc.Size = new System.Drawing.Size(388, 51);
+            this.desc.TabIndex = 36;
             // 
             // guna2GradientTileButton1
             // 
@@ -168,6 +165,7 @@
             this.guna2GradientTileButton1.Size = new System.Drawing.Size(439, 93);
             this.guna2GradientTileButton1.TabIndex = 40;
             this.guna2GradientTileButton1.Text = "ADD";
+            this.guna2GradientTileButton1.Click += new System.EventHandler(this.guna2GradientTileButton1_Click_1);
             // 
             // AddIncome
             // 
@@ -175,11 +173,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.guna2GradientTileButton1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.guna2TextBox2);
+            this.Controls.Add(this.desc);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Label1);
-            this.Controls.Add(this.guna2TextBox1);
-            this.Controls.Add(this.guna2DateTimePicker1);
+            this.Controls.Add(this.amount);
+            this.Controls.Add(this.date);
             this.Font = new System.Drawing.Font("Century Gothic", 6.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "AddIncome";
             this.Size = new System.Drawing.Size(1419, 941);
@@ -191,12 +189,12 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker date;
+        private Guna.UI2.WinForms.Guna2TextBox amount;
         private System.Windows.Forms.Label Label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2TextBox desc;
         private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton1;
     }
 }
