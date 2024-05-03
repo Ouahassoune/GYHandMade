@@ -42,7 +42,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label19 = new System.Windows.Forms.Label();
+            this.transactions = new System.Windows.Forms.Label();
             this.bunifuImageButton9 = new Bunifu.Framework.UI.BunifuImageButton();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -194,7 +194,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.label19);
+            this.panel3.Controls.Add(this.transactions);
             this.panel3.Controls.Add(this.bunifuImageButton9);
             this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.label17);
@@ -204,17 +204,17 @@
             this.panel3.Size = new System.Drawing.Size(182, 120);
             this.panel3.TabIndex = 33;
             // 
-            // label19
+            // transactions
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(51, 65);
-            this.label19.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(108, 23);
-            this.label19.TabIndex = 27;
-            this.label19.Text = "$50,000,00";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
+            this.transactions.AutoSize = true;
+            this.transactions.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transactions.Location = new System.Drawing.Point(51, 65);
+            this.transactions.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.transactions.Name = "transactions";
+            this.transactions.Size = new System.Drawing.Size(108, 23);
+            this.transactions.TabIndex = 27;
+            this.transactions.Text = "$50,000,00";
+            this.transactions.Click += new System.EventHandler(this.label19_Click);
             // 
             // bunifuImageButton9
             // 
@@ -250,9 +250,9 @@
             this.label17.Location = new System.Drawing.Point(7, 13);
             this.label17.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(135, 17);
+            this.label17.Size = new System.Drawing.Size(126, 17);
             this.label17.TabIndex = 27;
-            this.label17.Text = "Recent Transaction";
+            this.label17.Text = "Total Transactions";
             // 
             // Label1
             // 
@@ -324,7 +324,7 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label transactions;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton9;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;

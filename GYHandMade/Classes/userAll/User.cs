@@ -57,6 +57,18 @@ namespace GYProject.Classes.userAll
             return userDB.getTotalIncomes(this.id);
         }
 
+        public int GetTotalTransactionsCount()
+        {
+            // Récupérer toutes les transactions de l'utilisateur
+            List<Transaction> transactions = AllTransaction();
+
+            // Retourner le nombre total de transactions
+            return transactions.Count;
+        }
+
+
+
+
         //ajouter transaction a ce user
         public void AjouterTransaction(Transaction transaction)
         {
