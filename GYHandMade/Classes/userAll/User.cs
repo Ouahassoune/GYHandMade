@@ -45,9 +45,20 @@ namespace GYProject.Classes.userAll
         {
             return userDB.ShowAllTransaction(this.id);
         }
-      
+
+
+        //afficher le total du montant des  transaction de type expense (depense)
+        public decimal TotalExpenses()
+        {
+            return userDB.GetTotalExpenses(this.id);
+        }
+        public decimal getTotalIncomes()
+        {
+            return userDB.getTotalIncomes(this.id);
+        }
+
         //ajouter transaction a ce user
-        public  void AjouterTransaction(Transaction transaction)
+        public void AjouterTransaction(Transaction transaction)
         {
             TransactionDB.AddTransaction(transaction, this.id);
         }

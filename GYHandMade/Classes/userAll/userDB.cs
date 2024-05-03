@@ -187,6 +187,55 @@ namespace GYProject.Classes.userAll
             return transactions;
         }
 
+        internal static decimal GetTotalExpenses(int userId)
+        {
+            decimal totalExpenses = 0;
+            try
+            {
+                // Construction de la requête SQL pour calculer la somme des dépenses de l'utilisateur
+                string query = $"SELECT SUM(Montant) AS Total FROM transactions " +
+                               $"WHERE idUser = {userId} AND Type = 'depense'";
+
+                // Exécution de la requête à l'aide de la classe DatabaseManager et récupération du résultat
+                DataTable dataTable = DatabaseManager.Instance.ExecuteQuery(query);
+
+                // Vérification s'il y a des lignes retournées
+                if (dataTable.Rows.Count > 0 && dataTable.Rows[0]["Total"] != DBNull.Value)
+                {
+                    totalExpenses = Convert.ToDecimal(dataTable.Rows[0]["Total"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur lors de la récupération du total des dépenses : " + ex.Message);
+            }
+            return totalExpenses;
+        }
+
+        internal static decimal getTotalIncomes(int userId)
+        {
+            decimal totalExpenses = 0;
+            try
+            {
+                // Construction de la requête SQL pour calculer la somme des dépenses de l'utilisateur
+                string query = $"SELECT SUM(Montant) AS Total FROM transactions " +
+                               $"WHERE idUser = {userId} AND Type = 'revenu'";
+
+                // Exécution de la requête à l'aide de la classe DatabaseManager et récupération du résultat
+                DataTable dataTable = DatabaseManager.Instance.ExecuteQuery(query);
+
+                // Vérification s'il y a des lignes retournées
+                if (dataTable.Rows.Count > 0 && dataTable.Rows[0]["Total"] != DBNull.Value)
+                {
+                    totalExpenses = Convert.ToDecimal(dataTable.Rows[0]["Total"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur lors de la récupération du total des dépenses : " + ex.Message);
+            }
+            return totalExpenses;
+        }
 
 
 
