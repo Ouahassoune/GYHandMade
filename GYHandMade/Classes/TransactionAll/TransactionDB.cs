@@ -26,9 +26,9 @@ namespace GYProject.Classes
         // Méthode pour insérer une nouvelle transaction dans la base de données
         internal static void  AddTransaction(Transaction transaction, int UserId)
         {    // Construction de la requête SQL d'insertion dans la table transactions
-            string query = $"INSERT INTO transactions (Description, Montant, Date, Type, idUser) " +
+            string query = $"INSERT INTO transactions (Description, Montant, Date, Type, idUser, category) " +
                            $"VALUES ('{transaction.Description}', {transaction.Montant}, " +
-                           $"'{transaction.Date.ToString("yyyy-MM-dd HH:mm:ss")}', '{transaction.Type}', {UserId})";
+                           $"'{transaction.Date.ToString("yyyy-MM-dd HH:mm:ss")}', '{transaction.Type}', {UserId}, '{transaction.category}')";
 
                // Exécution de la requête à l'aide de la classe DatabaseManager
                 DatabaseManager.Instance.ExecuteNonQuery(query);
@@ -78,12 +78,13 @@ namespace GYProject.Classes
                     transaction = new Transaction(
                         row["Description"].ToString(), // Description
                         Convert.ToDecimal(row["Montant"]), // Montant
-                        row["Type"].ToString() // Type
+                          row["Type"].ToString(), // Type
+                       DateTime.Parse(row["Date"].ToString()), // Type
+                           row["category"].ToString() // Description
                     );
 
                     // Utilisation des setters pour remplir les autres champs
                     transaction.ID = Convert.ToInt32(row["ID"]);
-                    transaction.Date = Convert.ToDateTime(row["Date"]);
                 }
             }
             catch (Exception ex)
@@ -111,9 +112,11 @@ namespace GYProject.Classes
                 foreach (DataRow row in dataTable.Rows)
                 {
                     Transaction transaction = new Transaction(
-                    row["Description"].ToString(), // Description
-                    Convert.ToDecimal(row["Montant"]), // Montant
-                    row["Type"].ToString() // Type
+                  row["Description"].ToString(), // Description
+                        Convert.ToDecimal(row["Montant"]), // Montant
+                          row["Type"].ToString(), // Type
+                       DateTime.Parse(row["Date"].ToString()), // Type
+                           row["category"].ToString() // Description
                     );
 
                     // Utilisation des setters pour remplir les autres champs
