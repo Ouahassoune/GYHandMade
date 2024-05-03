@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace GYProject.Classes.userAll
 {
@@ -72,6 +73,14 @@ namespace GYProject.Classes.userAll
         }
 
 
+       //retourner la situation finnanciere de user
+        public string AnalyzeFinancialState()
+        {
+            // Appeler la méthode de la classe UserDB pour analyser l'état financier
+            return userDB.AnalyzeFinancialState(this.id);
+        }
+
+
 
 
         //ajouter transaction a ce user
@@ -101,7 +110,14 @@ namespace GYProject.Classes.userAll
             userDB.AddUserCompte(this.id, compte);
         }
 
-      
+        public string AnalyzeFinancialState()
+        {
+            // Appeler la méthode de la classe UserDB pour analyser l'état financier
+            return userDB.AnalyzeFinancialState(this.id);
+        }
+
+
+
 
 
 

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Text;
 using GYProject.Classes.CompteAll;
 using GYProject.Classes.userAll;
 using GYProject.Database;
@@ -235,6 +237,71 @@ namespace GYProject.Classes.userAll
                 Console.WriteLine("Erreur lors de la récupération du total des dépenses : " + ex.Message);
             }
             return totalExpenses;
+        }
+
+        
+        public static string AnalyzeFinancialState(int userId)
+        {
+            User us = GetUserById(userId);
+            // Obtenir le solde du compte de l'utilisateur
+            decimal accountBalance = us.GetAccountBalance(); 
+
+            // Obtenir toutes les transactions de l'utilisateur
+            List<Transaction> transactions = us.AllTransaction();
+
+            // Calculer le total des revenus et des dépenses
+            decimal totalIncome = transactions.Where(t => t.Type == "revenu").Sum(t => t.Montant);
+            decimal totalExpense = transactions.Where(t => t.Type == "depense").Sum(t => t.Montant);
+
+            // Vérifier si les finances sont cohérentes
+            bool coherentFinances = Math.Abs(totalIncome - totalExpense) < 0.1m; // Tolerance de 0.1 pour les erreurs de précision
+
+            // Calculer le pourcentage des revenus par rapport aux dépenses
+            decimal incomePercentage = totalIncome / (totalIncome + totalExpense) * 100;
+            decimal expensePercentage = totalExpense / (totalIncome + totalExpense) * 100;
+
+            // Déterminer l'état financier en fonction des pourcentages
+            string financialStatus = "";
+            if (incomePercentage >= 70 && expensePercentage <= 30)
+            {
+                financialStatus = "La situation financière est excellente. Les revenus sont élevés et les dépenses sont faibles, ce qui permet de générer des économies importantes.";
+            }
+            else if (incomePercentage >= 60 && expensePercentage <= 40)
+            {
+                financialStatus = "La situation financière est stable. Les revenus sont suffisants pour couvrir les dépenses sans difficulté.";
+            }
+            else if (incomePercentage >= 50 && expensePercentage <= 50)
+            {
+                financialStatus = "La situation financière est équilibrée. Les revenus et les dépenses sont relativement proches, ce qui indique une gestion financière raisonnable.";
+            }
+            else
+            {
+                financialStatus = "La situation financière nécessite une attention particulière. Les revenus peuvent ne pas être suffisants pour couvrir les dépenses, ce qui peut entraîner un déséquilibre financier.";
+            }
+
+            // Construire le message d'analyse financière
+            StringBuilder analysis = new StringBuilder();
+            analysis.AppendLine("Analyse financière :");
+
+            if (coherentFinances)
+            {
+                analysis.AppendLine("Les finances sont cohérentes.");
+            }
+            else
+            {
+                analysis.AppendLine("Attention : les finances ne sont pas cohérentes.");
+            }
+
+            analysis.AppendLine($"Solde du compte : {accountBalance}");
+            analysis.AppendLine($"Total des revenus : {totalIncome}");
+            analysis.AppendLine($"Total des dépenses : {totalExpense}");
+            analysis.AppendLine($"Pourcentage des revenus : {incomePercentage}%");
+            analysis.AppendLine($"Pourcentage des dépenses : {expensePercentage}%");
+            analysis.AppendLine();
+            analysis.AppendLine("État financier :");
+            analysis.AppendLine(financialStatus);
+
+            return analysis.ToString();
         }
 
 
