@@ -250,9 +250,9 @@
             this.label17.Location = new System.Drawing.Point(7, 13);
             this.label17.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(126, 17);
+            this.label17.Size = new System.Drawing.Size(100, 17);
             this.label17.TabIndex = 27;
-            this.label17.Text = "Total Transactions";
+            this.label17.Text = "Total Balance";
             // 
             // Label1
             // 

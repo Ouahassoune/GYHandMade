@@ -65,6 +65,11 @@ namespace GYProject.Classes.userAll
             // Retourner le nombre total de transactions
             return transactions.Count;
         }
+        public decimal GetAccountBalance()
+        {
+            // Calculer le solde du compte (total des revenus - total des dépenses)
+            return getTotalIncomes() - TotalExpenses();
+        }
 
 
 

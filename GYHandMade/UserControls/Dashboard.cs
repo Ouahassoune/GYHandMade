@@ -20,7 +20,7 @@ namespace GYHandMade.UserControls
             user = userDB.GetUserById(9);
             expenses.Text ="$ "+ user.TotalExpenses().ToString();
             incomes.Text= "$ " + user.getTotalIncomes().ToString();
-            transactions.Text=user.GetTotalTransactionsCount().ToString();
+            transactions.Text=user.GetAccountBalance().ToString();
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
