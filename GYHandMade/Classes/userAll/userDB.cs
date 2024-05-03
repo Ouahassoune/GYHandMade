@@ -189,6 +189,21 @@ namespace GYProject.Classes.userAll
             return transactions;
         }
 
+
+        internal static List<Transaction> getLast(int userId)
+        {
+            // Obtenir toutes les transactions de l'utilisateur
+            List<Transaction> allTransactions = userDB.ShowAllTransaction(userId);
+
+            // Trier les transactions par date dans l'ordre décroissant
+            List<Transaction> sortedTransactions = allTransactions.OrderByDescending(t => t.Date).ToList();
+
+            // Sélectionner les trois premières transactions
+            List<Transaction> lastThreeTransactions = sortedTransactions.Take(3).ToList();
+
+            return lastThreeTransactions;
+        }
+
         internal static decimal GetTotalExpenses(int userId)
         {
             decimal totalExpenses = 0;

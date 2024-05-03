@@ -48,6 +48,13 @@ namespace GYProject.Classes.userAll
         }
 
 
+        //afficher juste 3 derniere transaction: 
+        public List<Transaction> GetLastThreeTransactions()
+        {
+            return userDB.getLast(this.id );
+        }
+        
+
         //afficher le total du montant des  transaction de type expense (depense)
         public decimal TotalExpenses()
         {
@@ -110,12 +117,7 @@ namespace GYProject.Classes.userAll
             userDB.AddUserCompte(this.id, compte);
         }
 
-        public string AnalyzeFinancialState()
-        {
-            // Appeler la méthode de la classe UserDB pour analyser l'état financier
-            return userDB.AnalyzeFinancialState(this.id);
-        }
-
+      
 
 
 
