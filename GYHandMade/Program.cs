@@ -1,4 +1,4 @@
-﻿using GYProject.Classes;
+using GYProject.Classes;
 using GYProject.Classes.userAll;
 using System;
 using System.Collections.Generic;
