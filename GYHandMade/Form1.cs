@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GYHandMade.UserControls;
 
 namespace GYHandMade
 {
@@ -15,6 +16,9 @@ namespace GYHandMade
     {
         UserControls.Dashboard Udashboard = new UserControls.Dashboard();
         UserControls.AddTransaction UAddTransaction = new UserControls.AddTransaction();
+   
+        UserControls.ToHistory UHistory = new UserControls.ToHistory();
+        UserControls.AddCompte UCompte = new UserControls.AddCompte();
         public Form1()
         {
             InitializeComponent();
@@ -56,6 +60,31 @@ namespace GYHandMade
             // Add the dashboard user control to the form
             MainPanel.Controls.Add(UAddTransaction);
             UAddTransaction.Dock = DockStyle.Fill;
+        }
+
+        private void bunifuImageButton3_Click(object sender, EventArgs e)
+        {
+            // Clear existing controls from the form
+            MainPanel.Controls.Clear();
+
+            // Add the dashboard user control to the form
+            MainPanel.Controls.Add(UHistory);
+            UHistory.Dock = DockStyle.Fill;
+        }
+
+        private void MainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void bunifuImageButton1_Click_1(object sender, EventArgs e)
+        {
+            // Clear existing controls from the form
+            MainPanel.Controls.Clear();
+
+            // Add the dashboard user control to the form
+            MainPanel.Controls.Add(UCompte);
+            UCompte.Dock = DockStyle.Fill;
         }
     }
 }
