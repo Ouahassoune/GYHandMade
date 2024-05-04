@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BlurWindow, Version=7.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BlurWindow.7.0.1\lib\net45\BlurWindow.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
@@ -83,6 +86,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\AddCompte.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -113,6 +121,18 @@
     <Compile Include="UserControls\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Mo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Mo.Designer.cs">
+      <DependentUpon>Mo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Moz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Moz.Designer.cs">
+      <DependentUpon>Moz.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ToHistory.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -137,6 +157,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\AddCompte.resx">
       <DependentUpon>AddCompte.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +176,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Mo.resx">
+      <DependentUpon>Mo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Moz.resx">
+      <DependentUpon>Moz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ToHistory.resx">
       <DependentUpon>ToHistory.cs</DependentUpon>
@@ -174,6 +205,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="category\Blue Flat Illustrative Finance Company Logo %282%29.png" />
+    <None Include="category\Blue Flat Illustrative Finance Company Logo %283%29.png" />
     <Content Include="category\Entertainment.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
