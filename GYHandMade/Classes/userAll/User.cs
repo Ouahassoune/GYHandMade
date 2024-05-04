@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace GYProject.Classes.userAll
 {
@@ -45,9 +46,52 @@ namespace GYProject.Classes.userAll
         {
             return userDB.ShowAllTransaction(this.id);
         }
-      
+
+
+        //afficher juste 3 derniere transaction: 
+        public List<Transaction> GetLastThreeTransactions()
+        {
+            return userDB.getLast(this.id );
+        }
+        
+
+        //afficher le total du montant des  transaction de type expense (depense)
+        public decimal TotalExpenses()
+        {
+            return userDB.GetTotalExpenses(this.id);
+        }
+        public decimal getTotalIncomes()
+        {
+            return userDB.getTotalIncomes(this.id);
+        }
+
+        public int GetTotalTransactionsCount()
+        {
+            // Récupérer toutes les transactions de l'utilisateur
+            List<Transaction> transactions = AllTransaction();
+
+            // Retourner le nombre total de transactions
+            return transactions.Count;
+        }
+        public decimal GetAccountBalance()
+        {
+            // Calculer le solde du compte (total des revenus - total des dépenses)
+            return getTotalIncomes() - TotalExpenses();
+        }
+
+
+       //retourner la situation finnanciere de user
+        public string AnalyzeFinancialState()
+        {
+            // Appeler la méthode de la classe UserDB pour analyser l'état financier
+            return userDB.AnalyzeFinancialState(this.id);
+        }
+
+
+
+
         //ajouter transaction a ce user
-        public  void AjouterTransaction(Transaction transaction)
+        public void AjouterTransaction(Transaction transaction)
         {
             TransactionDB.AddTransaction(transaction, this.id);
         }
@@ -74,6 +118,8 @@ namespace GYProject.Classes.userAll
         }
 
       
+
+
 
 
 

@@ -17,7 +17,7 @@ namespace GYHandMade.UserControls
         public AddIncome()
         {
             InitializeComponent();
-            user = userDB.GetUserById(7);
+            user = userDB.GetUserById(9);
         }
 
         private void AddIncome_Load(object sender, EventArgs e)
@@ -39,6 +39,16 @@ namespace GYHandMade.UserControls
             Transaction tr = new Transaction(description,montant,"revenu",dateSelectionnee,category);
             user.AjouterTransaction(tr);
 
+        }
+
+        private void guna2GradientTileButton1_Click_1(object sender, EventArgs e)
+        {
+            decimal montant = decimal.Parse(amount.Text);
+            DateTime dateSelectionnee = date.Value;
+            string description = desc.Text;
+            string category = "category";
+            Transaction tr = new Transaction(description, montant, "revenu", dateSelectionnee, category);
+            user.AjouterTransaction(tr);
         }
     }
 }

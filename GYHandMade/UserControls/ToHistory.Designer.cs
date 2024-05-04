@@ -40,6 +40,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +56,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(69, 218);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1703, 100);
+            this.panel2.Size = new System.Drawing.Size(1722, 100);
             this.panel2.TabIndex = 35;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -120,7 +122,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(69, 57);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1722, 1140);
+            this.panel1.Size = new System.Drawing.Size(1722, 1453);
             this.panel1.TabIndex = 34;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -128,7 +130,7 @@
             // 
             this.panel3.Location = new System.Drawing.Point(3, 267);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1700, 805);
+            this.panel3.Size = new System.Drawing.Size(1716, 1183);
             this.panel3.TabIndex = 13;
             // 
             // label3
@@ -150,6 +152,11 @@
             // 
             this.guna2Elipse2.BorderRadius = 25;
             this.guna2Elipse2.TargetControl = this.panel3;
+            // 
+            // guna2Elipse4
+            // 
+            this.guna2Elipse4.BorderRadius = 25;
+            this.guna2Elipse4.TargetControl = this.panel2;
             // 
             // ToHistory
             // 
@@ -181,5 +188,7 @@
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
     }
 }

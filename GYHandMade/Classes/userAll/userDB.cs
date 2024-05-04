@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Text;
 using GYProject.Classes.CompteAll;
 using GYProject.Classes.userAll;
 using GYProject.Database;
@@ -187,6 +189,135 @@ namespace GYProject.Classes.userAll
             return transactions;
         }
 
+
+        internal static List<Transaction> getLast(int userId)
+        {
+            // Obtenir toutes les transactions de l'utilisateur
+            List<Transaction> allTransactions = userDB.ShowAllTransaction(userId);
+
+            // Trier les transactions par date dans l'ordre décroissant
+            List<Transaction> sortedTransactions = allTransactions.OrderByDescending(t => t.Date).ToList();
+
+            // Sélectionner les trois premières transactions
+            List<Transaction> lastThreeTransactions = sortedTransactions.Take(3).ToList();
+
+            return lastThreeTransactions;
+        }
+
+        internal static decimal GetTotalExpenses(int userId)
+        {
+            decimal totalExpenses = 0;
+            try
+            {
+                // Construction de la requête SQL pour calculer la somme des dépenses de l'utilisateur
+                string query = $"SELECT SUM(Montant) AS Total FROM transactions " +
+                               $"WHERE idUser = {userId} AND Type = 'depense'";
+
+                // Exécution de la requête à l'aide de la classe DatabaseManager et récupération du résultat
+                DataTable dataTable = DatabaseManager.Instance.ExecuteQuery(query);
+
+                // Vérification s'il y a des lignes retournées
+                if (dataTable.Rows.Count > 0 && dataTable.Rows[0]["Total"] != DBNull.Value)
+                {
+                    totalExpenses = Convert.ToDecimal(dataTable.Rows[0]["Total"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur lors de la récupération du total des dépenses : " + ex.Message);
+            }
+            return totalExpenses;
+        }
+
+        internal static decimal getTotalIncomes(int userId)
+        {
+            decimal totalExpenses = 0;
+            try
+            {
+                // Construction de la requête SQL pour calculer la somme des dépenses de l'utilisateur
+                string query = $"SELECT SUM(Montant) AS Total FROM transactions " +
+                               $"WHERE idUser = {userId} AND Type = 'revenu'";
+
+                // Exécution de la requête à l'aide de la classe DatabaseManager et récupération du résultat
+                DataTable dataTable = DatabaseManager.Instance.ExecuteQuery(query);
+
+                // Vérification s'il y a des lignes retournées
+                if (dataTable.Rows.Count > 0 && dataTable.Rows[0]["Total"] != DBNull.Value)
+                {
+                    totalExpenses = Convert.ToDecimal(dataTable.Rows[0]["Total"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur lors de la récupération du total des dépenses : " + ex.Message);
+            }
+            return totalExpenses;
+        }
+
+        
+        public static string AnalyzeFinancialState(int userId)
+        {
+            User us = GetUserById(userId);
+            // Obtenir le solde du compte de l'utilisateur
+            decimal accountBalance = us.GetAccountBalance(); 
+
+            // Obtenir toutes les transactions de l'utilisateur
+            List<Transaction> transactions = us.AllTransaction();
+
+            // Calculer le total des revenus et des dépenses
+            decimal totalIncome = transactions.Where(t => t.Type == "revenu").Sum(t => t.Montant);
+            decimal totalExpense = transactions.Where(t => t.Type == "depense").Sum(t => t.Montant);
+
+            // Vérifier si les finances sont cohérentes
+            bool coherentFinances = Math.Abs(totalIncome - totalExpense) < 0.1m; // Tolerance de 0.1 pour les erreurs de précision
+
+            // Calculer le pourcentage des revenus par rapport aux dépenses
+            decimal incomePercentage = totalIncome / (totalIncome + totalExpense) * 100;
+            decimal expensePercentage = totalExpense / (totalIncome + totalExpense) * 100;
+
+            // Déterminer l'état financier en fonction des pourcentages
+            string financialStatus = "";
+            if (incomePercentage >= 70 && expensePercentage <= 30)
+            {
+                financialStatus = "La situation financière est excellente. Les revenus sont élevés et les dépenses sont faibles, ce qui permet de générer des économies importantes.";
+            }
+            else if (incomePercentage >= 60 && expensePercentage <= 40)
+            {
+                financialStatus = "La situation financière est stable. Les revenus sont suffisants pour couvrir les dépenses sans difficulté.";
+            }
+            else if (incomePercentage >= 50 && expensePercentage <= 50)
+            {
+                financialStatus = "La situation financière est équilibrée. Les revenus et les dépenses sont relativement proches, ce qui indique une gestion financière raisonnable.";
+            }
+            else
+            {
+                financialStatus = "La situation financière nécessite une attention particulière. Les revenus peuvent ne pas être suffisants pour couvrir les dépenses, ce qui peut entraîner un déséquilibre financier.";
+            }
+
+            // Construire le message d'analyse financière
+            StringBuilder analysis = new StringBuilder();
+            analysis.AppendLine("Analyse financière :");
+
+            if (coherentFinances)
+            {
+                analysis.AppendLine("Les finances sont cohérentes.");
+            }
+            else
+            {
+                analysis.AppendLine("Attention : les finances ne sont pas cohérentes.");
+            }
+
+            analysis.AppendLine($"Solde du compte : {accountBalance}");
+            analysis.AppendLine($"Total des revenus : {totalIncome}");
+            analysis.AppendLine($"Total des dépenses : {totalExpense}");
+            analysis.AppendLine($"Pourcentage des revenus : {incomePercentage}%");
+            analysis.AppendLine($"Pourcentage des dépenses : {expensePercentage}%");
+            analysis.AppendLine();
+            analysis.AppendLine("État financier :");
+            analysis.AppendLine(financialStatus);
+
+            return analysis.ToString();
+        }
 
 
 

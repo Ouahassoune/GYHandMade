@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddIncome));
             this.date = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.amount = new Guna.UI2.WinForms.Guna2TextBox();
             this.Label1 = new System.Windows.Forms.Label();
@@ -50,13 +49,13 @@
             this.date.ForeColor = System.Drawing.Color.Indigo;
             this.date.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.date.HoverState.Parent = this.date;
-            this.date.Location = new System.Drawing.Point(196, 200);
+            this.date.Location = new System.Drawing.Point(457, 214);
             this.date.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date.Name = "date";
             this.date.ShadowDecoration.Parent = this.date;
             this.date.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
-            this.date.Size = new System.Drawing.Size(174, 63);
+            this.date.Size = new System.Drawing.Size(443, 63);
             this.date.TabIndex = 0;
             this.date.Value = new System.DateTime(2024, 5, 2, 18, 15, 31, 726);
             // 
@@ -77,9 +76,8 @@
             this.amount.FocusedState.Parent = this.amount;
             this.amount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.amount.HoverState.Parent = this.amount;
-            this.amount.IconLeft = ((System.Drawing.Image)(resources.GetObject("amount.IconLeft")));
             this.amount.IconLeftSize = new System.Drawing.Size(42, 42);
-            this.amount.Location = new System.Drawing.Point(220, 93);
+            this.amount.Location = new System.Drawing.Point(457, 108);
             this.amount.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.amount.Name = "amount";
             this.amount.Padding = new System.Windows.Forms.Padding(10);
@@ -87,7 +85,7 @@
             this.amount.PlaceholderText = "";
             this.amount.SelectedText = "";
             this.amount.ShadowDecoration.Parent = this.amount;
-            this.amount.Size = new System.Drawing.Size(234, 59);
+            this.amount.Size = new System.Drawing.Size(443, 59);
             this.amount.TabIndex = 1;
             // 
             // Label1
@@ -97,7 +95,7 @@
             this.Label1.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.Location = new System.Drawing.Point(70, 108);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(141, 17);
+            this.Label1.Size = new System.Drawing.Size(342, 40);
             this.Label1.TabIndex = 34;
             this.Label1.Text = "Transaction Amount";
             // 
@@ -108,7 +106,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(70, 214);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 17);
+            this.label2.Size = new System.Drawing.Size(291, 40);
             this.label2.TabIndex = 35;
             this.label2.Text = "Transaction Date";
             // 
@@ -117,9 +115,9 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(70, 270);
+            this.label3.Location = new System.Drawing.Point(79, 585);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 17);
+            this.label3.Size = new System.Drawing.Size(201, 40);
             this.label3.TabIndex = 37;
             this.label3.Text = "Description";
             // 
@@ -140,9 +138,8 @@
             this.desc.FocusedState.Parent = this.desc;
             this.desc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.desc.HoverState.Parent = this.desc;
-            this.desc.IconLeft = ((System.Drawing.Image)(resources.GetObject("desc.IconLeft")));
             this.desc.IconLeftSize = new System.Drawing.Size(42, 42);
-            this.desc.Location = new System.Drawing.Point(169, 270);
+            this.desc.Location = new System.Drawing.Point(457, 585);
             this.desc.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.desc.Name = "desc";
             this.desc.Padding = new System.Windows.Forms.Padding(9);
@@ -150,9 +147,8 @@
             this.desc.PlaceholderText = "";
             this.desc.SelectedText = "";
             this.desc.ShadowDecoration.Parent = this.desc;
-            this.desc.Size = new System.Drawing.Size(201, 51);
+            this.desc.Size = new System.Drawing.Size(388, 51);
             this.desc.TabIndex = 36;
-            this.desc.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
             // 
             // guna2GradientTileButton1
             // 
@@ -163,17 +159,17 @@
             this.guna2GradientTileButton1.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientTileButton1.ForeColor = System.Drawing.Color.White;
             this.guna2GradientTileButton1.HoverState.Parent = this.guna2GradientTileButton1;
-            this.guna2GradientTileButton1.Location = new System.Drawing.Point(38, 346);
+            this.guna2GradientTileButton1.Location = new System.Drawing.Point(474, 755);
             this.guna2GradientTileButton1.Name = "guna2GradientTileButton1";
             this.guna2GradientTileButton1.ShadowDecoration.Parent = this.guna2GradientTileButton1;
-            this.guna2GradientTileButton1.Size = new System.Drawing.Size(332, 93);
+            this.guna2GradientTileButton1.Size = new System.Drawing.Size(439, 93);
             this.guna2GradientTileButton1.TabIndex = 40;
             this.guna2GradientTileButton1.Text = "ADD";
-            this.guna2GradientTileButton1.Click += new System.EventHandler(this.guna2GradientTileButton1_Click);
+            this.guna2GradientTileButton1.Click += new System.EventHandler(this.guna2GradientTileButton1_Click_1);
             // 
             // AddIncome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.guna2GradientTileButton1);
             this.Controls.Add(this.label3);
@@ -184,7 +180,7 @@
             this.Controls.Add(this.date);
             this.Font = new System.Drawing.Font("Century Gothic", 6.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "AddIncome";
-            this.Size = new System.Drawing.Size(510, 680);
+            this.Size = new System.Drawing.Size(1419, 941);
             this.Load += new System.EventHandler(this.AddIncome_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
