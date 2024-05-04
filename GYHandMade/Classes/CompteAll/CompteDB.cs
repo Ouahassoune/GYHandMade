@@ -1,5 +1,6 @@
 ﻿using GYProject.Classes.userAll;
 using GYProject.Database;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -115,9 +116,44 @@ namespace GYProject.Classes.CompteAll
             return comptes;
         }
 
+        //ajouter montant au compte
 
+        internal static void RemoveAmountFromAccount(int userId, string accountName, decimal montant)
+        {
+            try
+            {
+                // Construction de la requête SQL pour mettre à jour le solde du compte
+                string query = $"UPDATE Compte SET Solde = Solde - {montant} WHERE IdUser = {userId} AND Nom = '{accountName}'";
 
-        // Méthode pour authentifier un utilisateur
+                // Exécution de la requête à l'aide de la classe DatabaseManager
+                DatabaseManager.Instance.ExecuteNonQuery(query);
+
+                Console.WriteLine($"Montant ajouté avec succès au compte {accountName}.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur lors de l'ajout du montant au compte : " + ex.Message);
+            }
+        }
+
+        internal static void AddAmountToAccount(int userId, string accountName, decimal montant)
+        {
+            try
+            {
+                // Construction de la requête SQL pour mettre à jour le solde du compte
+                string query = $"UPDATE Compte SET Solde = Solde + {montant} WHERE idUser = {userId} AND Nom = '{accountName}'";
+
+                // Exécution de la requête à l'aide de la classe DatabaseManager
+                DatabaseManager.Instance.ExecuteNonQuery(query);
+
+                Console.WriteLine($"Montant ajouté avec succès au compte {accountName}.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur lors de l'ajout du montant au compte : " + ex.Message);
+            }
+        }
+
     }
 
 

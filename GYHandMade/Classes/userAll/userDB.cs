@@ -6,6 +6,7 @@ using System.Text;
 using GYProject.Classes.CompteAll;
 using GYProject.Classes.userAll;
 using GYProject.Database;
+using Microsoft.VisualBasic.ApplicationServices;
 
 
 
@@ -18,6 +19,8 @@ namespace GYProject.Classes.userAll
 {
     public class userDB
     {
+        private static int userId;
+
         public userDB(){}
         //SS
 
@@ -103,6 +106,33 @@ namespace GYProject.Classes.userAll
             }
 
             return transactions;
+        }
+
+        internal static int AddUserWithComptes(User user, Compte compte1, Compte compte2)
+        {
+            try
+            {
+                // Insérer l'utilisateur dans la table "Users"
+                string queryUser = $"INSERT INTO users (nom, prenom, password,email) VALUES ('{user.nom}', '{user.prenom}', '{user.email}', '{user.password}')";
+                DatabaseManager.Instance.ExecuteNonQuery(queryUser);
+
+                // Obtenir l'ID de l'utilisateur nouvellement inséré
+                string queryUserId = $"SELECT MAX(Id) FROM Users";
+                int userId = Convert.ToInt32(DatabaseManager.Instance.ExecuteScalar(queryUserId));
+
+                // Insérer les comptes associés à l'utilisateur dans la table "Compte"
+                string queryCompte1 = $"INSERT INTO Compte (Nom, Solde, idUser) VALUES ('{compte1.Nom}', {compte1.Solde}, {userId})";
+                string queryCompte2 = $"INSERT INTO Compte (Nom, Solde, idUser) VALUES ('{compte2.Nom}', {compte2.Solde}, {userId})";
+                DatabaseManager.Instance.ExecuteNonQuery(queryCompte1);
+                DatabaseManager.Instance.ExecuteNonQuery(queryCompte2);
+
+                Console.WriteLine("Utilisateur et comptes ajoutés avec succès.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur lors de l'ajout de l'utilisateur et des comptes : " + ex.Message);
+            }
+            return userId;
         }
 
 
@@ -365,7 +395,7 @@ namespace GYProject.Classes.userAll
             analysis.AppendLine("État financier :");
             analysis.AppendLine(financialStatus);
 
-            return analysis.ToString();
+            return financialStatus+" alanyse: "+analysis.ToString();
         }
 
 
@@ -452,6 +482,8 @@ namespace GYProject.Classes.userAll
                 Console.WriteLine("Erreur lors de l'effectuation de la transaction : " + ex.Message);
             }
         }
+
+
 
 
 
