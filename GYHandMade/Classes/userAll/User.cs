@@ -86,7 +86,11 @@ namespace GYProject.Classes.userAll
             // Appeler la méthode de la classe UserDB pour analyser l'état financier
             return userDB.AnalyzeFinancialState(this.id);
         }
-
+        // retourner les futur trans
+        public List<Transaction> FuturTransactions()
+        {
+            return userDB.GetRecentTransactions(this.id);
+        }
 
 
 
