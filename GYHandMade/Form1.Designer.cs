@@ -1,4 +1,4 @@
-﻿namespace GYHandMade
+namespace GYHandMade
 {
     partial class Form1
     {

@@ -31,5 +31,15 @@ namespace GYHandMade.UserControls
             Transaction tr = new Transaction(description, montant, "depense", dateSelectionnee, category);
             user.AjouterTransaction(tr);
         }
+
+        private void guna2GradientTileButton1_Click_1(object sender, EventArgs e)
+        {
+            decimal montant = decimal.Parse(amount.Text);
+            DateTime dateSelectionnee = date.Value;
+            string description = desc.Text;
+            string category = "category";
+            Transaction tr = new Transaction(description, montant, "depense", dateSelectionnee, category);
+            user.AjouterTransaction(tr);
+        }
     }
 }
