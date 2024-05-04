@@ -46,7 +46,11 @@ namespace GYProject.Classes.userAll
         {
             return userDB.ShowAllTransaction(this.id);
         }
-
+        // retourner les futur trans
+        public List<Transaction> FuturTransactions()
+        {
+           return userDB.GetRecentTransactions(this.id);
+        }
 
         //afficher juste 3 derniere transaction: 
         public List<Transaction> GetLastThreeTransactions()

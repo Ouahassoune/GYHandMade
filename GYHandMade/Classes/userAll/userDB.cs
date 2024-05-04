@@ -188,6 +188,54 @@ namespace GYProject.Classes.userAll
             }
             return transactions;
         }
+   
+        //les transaction apres aujordhui
+        internal static List<Transaction> GetTransactionsAfterDate(int userId, DateTime date)
+        {
+            List<Transaction> transactions = new List<Transaction>();
+
+            try
+            {
+                // Construction de la requête SQL pour récupérer les transactions de l'utilisateur après une certaine date
+                string query = $"SELECT * FROM transactions WHERE idUser = {userId} AND Date > '{date.ToString("yyyy-MM-dd")}'";
+
+                // Exécution de la requête à l'aide de la classe DatabaseManager et récupération des résultats
+                DataTable dataTable = DatabaseManager.Instance.ExecuteQuery(query);
+
+                // Transformation des lignes de données en objets Transaction
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    Transaction transaction = new Transaction();
+                    transaction.ID = Convert.ToInt32(row["ID"]);
+                    transaction.Description = row["Description"].ToString();
+                    transaction.Montant = Convert.ToDecimal(row["Montant"]);
+                    transaction.Date = Convert.ToDateTime(row["Date"]);
+                    transaction.Type = row["Type"].ToString();
+                    transactions.Add(transaction);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur lors de la récupération des transactions : " + ex.Message);
+            }
+
+            return transactions;
+        }
+        internal static List<Transaction> GetRecentTransactions(int userId)
+        {
+            // Obtenir la date d'aujourd'hui
+            DateTime today = DateTime.Today;
+
+            // Obtenir toutes les transactions de l'utilisateur ayant une date supérieure à aujourd'hui
+            List<Transaction> recentTransactions = GetTransactionsAfterDate(userId, today);
+
+            // Trier les transactions par date décroissante
+            recentTransactions.Sort((t1, t2) => t2.Date.CompareTo(t1.Date));
+
+            // Retourner les deux dernières transactions
+            return recentTransactions.Take(2).ToList();
+        }
+
 
 
         internal static List<Transaction> getLast(int userId)
