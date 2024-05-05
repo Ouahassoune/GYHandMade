@@ -257,6 +257,7 @@ namespace GYProject.Classes.userAll
                     transaction.Description = row["Description"].ToString();
                     transaction.Montant = Convert.ToDecimal(row["Montant"]);
                     transaction.Date = Convert.ToDateTime(row["Date"]);
+                    transaction.Type = row["Type"].ToString();
                     transactions.Add(transaction);
                 }
 

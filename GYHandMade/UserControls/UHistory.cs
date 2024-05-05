@@ -48,7 +48,7 @@ namespace GYHandMade.UserControls
             // Set properties of the UHistory control based on the provided history item
 
             //Typep = historyItem.Type;
-            Typep = "revenue";
+            Typep = historyItem.Type;
             Description = historyItem.Description;
             Date = historyItem.Date;
             Montant = historyItem.Montant;
@@ -82,7 +82,7 @@ namespace GYHandMade.UserControls
             if (categoryPicturePaths.ContainsKey(category))
             {
                 string picturePath = categoryPicturePaths[category];
-                pictureBox.Image = Image.FromFile(picturePath);
+               // pictureBox.Image = Image.FromFile(picturePath);
             }
             else
             {
