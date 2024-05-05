@@ -95,7 +95,7 @@
             this.Label1.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.Location = new System.Drawing.Point(70, 108);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(342, 40);
+            this.Label1.Size = new System.Drawing.Size(141, 17);
             this.Label1.TabIndex = 34;
             this.Label1.Text = "Transaction Amount";
             // 
@@ -106,7 +106,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(70, 214);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(291, 40);
+            this.label2.Size = new System.Drawing.Size(120, 17);
             this.label2.TabIndex = 35;
             this.label2.Text = "Transaction Date";
             // 
@@ -115,9 +115,9 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(79, 585);
+            this.label3.Location = new System.Drawing.Point(230, 363);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(201, 40);
+            this.label3.Size = new System.Drawing.Size(84, 17);
             this.label3.TabIndex = 37;
             this.label3.Text = "Description";
             // 
@@ -139,7 +139,7 @@
             this.desc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.desc.HoverState.Parent = this.desc;
             this.desc.IconLeftSize = new System.Drawing.Size(42, 42);
-            this.desc.Location = new System.Drawing.Point(457, 585);
+            this.desc.Location = new System.Drawing.Point(376, 349);
             this.desc.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.desc.Name = "desc";
             this.desc.Padding = new System.Windows.Forms.Padding(9);
@@ -159,7 +159,7 @@
             this.guna2GradientTileButton1.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientTileButton1.ForeColor = System.Drawing.Color.White;
             this.guna2GradientTileButton1.HoverState.Parent = this.guna2GradientTileButton1;
-            this.guna2GradientTileButton1.Location = new System.Drawing.Point(474, 755);
+            this.guna2GradientTileButton1.Location = new System.Drawing.Point(300, 420);
             this.guna2GradientTileButton1.Name = "guna2GradientTileButton1";
             this.guna2GradientTileButton1.ShadowDecoration.Parent = this.guna2GradientTileButton1;
             this.guna2GradientTileButton1.Size = new System.Drawing.Size(439, 93);
@@ -169,7 +169,7 @@
             // 
             // AddIncome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.guna2GradientTileButton1);
             this.Controls.Add(this.label3);

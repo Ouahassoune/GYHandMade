@@ -20,22 +20,28 @@ namespace GYProject.Classes.userAll
         public string prenom { get; set; }
         public string password { get; set; }
         public string email { get; set; }
+       public byte[] img { get; set; }
 
         public User()   {  }
-        public User(string nom, string prenom, string email, string password)
+        public User(string nom, string prenom, string email, string password, byte[] image)
         {
             this.nom = nom;
             this.prenom = prenom;
             this.email = email;
             this.password = password;
 
+            this.img = image;
         }
 
         /**********************les methodes de user ***********/
         //ajouter user
         public void AddUser()
         {
-            userDB.AddtUser(this);
+            Compte cm11 = new Compte("Espece", 0);
+            Compte cm12 = new Compte("Banc", 0);
+            int id=userDB.AddUserWithComptes(this, cm11, cm12);
+            this.id = id;
+           
         }
 
 
@@ -121,7 +127,20 @@ namespace GYProject.Classes.userAll
             userDB.AddUserCompte(this.id, compte);
         }
 
-      
+        public void AddToCompte(String nameOfCompte, decimal amount)
+        {
+            Console.WriteLine("id= dans meth " + this.id);
+
+            CompteDB.AddAmountToAccount(this.id, nameOfCompte, amount);
+        }
+
+        public void RemoveFromCompte(String nameOfCompte, decimal amount)
+        {
+            CompteDB.RemoveAmountFromAccount(this.id, nameOfCompte, amount);
+        }
+
+
+
 
 
 
