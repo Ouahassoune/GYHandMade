@@ -18,7 +18,7 @@ namespace GYHandMade.UserControls
         public AddExpense()
         {
             InitializeComponent();
-            user = userDB.GetUserById(7);
+            user = userDB.GetUserById(9);
 
         }
 
@@ -40,6 +40,11 @@ namespace GYHandMade.UserControls
             string category = "category";
             Transaction tr = new Transaction(description, montant, "depense", dateSelectionnee, category);
             user.AjouterTransaction(tr);
+        }
+
+        private void AddExpense_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

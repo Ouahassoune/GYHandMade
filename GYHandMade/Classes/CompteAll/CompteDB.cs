@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GYProject.Classes.CompteAll
 {
@@ -122,17 +123,32 @@ namespace GYProject.Classes.CompteAll
         {
             try
             {
-                // Construction de la requête SQL pour mettre à jour le solde du compte
-                string query = $"UPDATE Compte SET Solde = Solde - {montant} WHERE IdUser = {userId} AND Nom = '{accountName}'";
+                // Construction de la requête SQL pour obtenir le solde actuel du compte
+                string querySolde = $"SELECT Solde FROM Compte WHERE idUser = {userId} AND Nom = '{accountName}'";
 
-                // Exécution de la requête à l'aide de la classe DatabaseManager
-                DatabaseManager.Instance.ExecuteNonQuery(query);
+                // Exécution de la requête pour obtenir le solde
+                decimal solde = Convert.ToDecimal(DatabaseManager.Instance.ExecuteScalar(querySolde));
 
-                Console.WriteLine($"Montant ajouté avec succès au compte {accountName}.");
+                // Vérification du solde
+                if (solde >= montant)
+                {
+                    // Construction de la requête SQL pour mettre à jour le solde du compte
+                    string query = $"UPDATE Compte SET Solde = Solde - {montant} WHERE idUser = {userId} AND Nom = '{accountName}'";
+
+                    // Exécution de la requête à l'aide de la classe DatabaseManager
+                    DatabaseManager.Instance.ExecuteNonQuery(query);
+
+                    Console.WriteLine($"Montant retiré avec succès du compte {accountName}.");
+                }
+                else
+                {
+                    // Afficher un message d'alerte si le solde est insuffisant
+                    MessageBox.Show("Le solde du compte est insuffisant pour effectuer cette opération.", "Solde insuffisant", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Erreur lors de l'ajout du montant au compte : " + ex.Message);
+                Console.WriteLine("Erreur lors du retrait du montant du compte : " + ex.Message);
             }
         }
 
