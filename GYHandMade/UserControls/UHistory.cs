@@ -83,7 +83,7 @@ namespace GYHandMade.UserControls
             if (categoryPicturePaths.ContainsKey(category))
             {
                 string picturePath = categoryPicturePaths[category];
-                pictureBox.Image = Image.FromFile(picturePath);
+               // pictureBox.Image = Image.FromFile(picturePath);
             }
             else
             {

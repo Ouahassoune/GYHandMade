@@ -180,6 +180,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -244,6 +245,7 @@
     <None Include="category\Blue Flat Illustrative Finance Company Logo %282%29.png" />
     <None Include="category\Blue Flat Illustrative Finance Company Logo %283%29.png" />
     <Content Include="category\Entertainment.png" />
+    <None Include="Resources\icons8-car-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

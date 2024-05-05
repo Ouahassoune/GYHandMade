@@ -81,7 +81,7 @@
             this.guna2GradientTileButton1.Location = new System.Drawing.Point(482, 820);
             this.guna2GradientTileButton1.Name = "guna2GradientTileButton1";
             this.guna2GradientTileButton1.ShadowDecoration.Parent = this.guna2GradientTileButton1;
-            this.guna2GradientTileButton1.Size = new System.Drawing.Size(439, 93);
+            this.guna2GradientTileButton1.Size = new System.Drawing.Size(165, 39);
             this.guna2GradientTileButton1.TabIndex = 47;
             this.guna2GradientTileButton1.Text = "ADD Expense";
             this.guna2GradientTileButton1.Click += new System.EventHandler(this.guna2GradientTileButton1_Click_1);
@@ -93,7 +93,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(104, 713);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(201, 40);
+            this.label3.Size = new System.Drawing.Size(84, 17);
             this.label3.TabIndex = 46;
             this.label3.Text = "Description";
             // 
@@ -104,7 +104,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(104, 130);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(291, 40);
+            this.label2.Size = new System.Drawing.Size(120, 17);
             this.label2.TabIndex = 44;
             this.label2.Text = "Transaction Date";
             // 
@@ -115,7 +115,7 @@
             this.Label1.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.Location = new System.Drawing.Point(94, 28);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(342, 40);
+            this.Label1.Size = new System.Drawing.Size(141, 17);
             this.Label1.TabIndex = 43;
             this.Label1.Text = "Transaction Amount";
             // 
@@ -143,12 +143,12 @@
             this.amount.Location = new System.Drawing.Point(474, 28);
             this.amount.Margin = new System.Windows.Forms.Padding(10);
             this.amount.Name = "amount";
-            this.amount.Padding = new System.Windows.Forms.Padding(10);
+            this.amount.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.amount.PasswordChar = '\0';
             this.amount.PlaceholderText = "Amount";
             this.amount.SelectedText = "";
             this.amount.ShadowDecoration.Parent = this.amount;
-            this.amount.Size = new System.Drawing.Size(443, 59);
+            this.amount.Size = new System.Drawing.Size(166, 25);
             this.amount.TabIndex = 42;
             // 
             // date
@@ -169,7 +169,7 @@
             this.date.Name = "date";
             this.date.ShadowDecoration.Parent = this.date;
             this.date.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
-            this.date.Size = new System.Drawing.Size(443, 63);
+            this.date.Size = new System.Drawing.Size(166, 26);
             this.date.TabIndex = 41;
             this.date.Value = new System.DateTime(2024, 5, 2, 18, 15, 31, 726);
             // 
@@ -501,7 +501,7 @@
             // 
             // AddExpense
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.desc);
             this.Controls.Add(this.label14);
@@ -531,6 +531,7 @@
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.amount);
             this.Controls.Add(this.date);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "AddExpense";
             this.Size = new System.Drawing.Size(1419, 941);
             this.Load += new System.EventHandler(this.AddExpense_Load);

@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using GYProject.Classes.CompteAll;
 using GYProject.Classes.userAll;
 using GYProject.Database;
+using Microsoft.VisualBasic.ApplicationServices;
 
 
 
@@ -18,11 +22,105 @@ namespace GYProject.Classes.userAll
 {
     public class userDB
     {
+        private static int userId;
+
         public userDB(){}
         //SS
 
 
+        // Méthode pour insérer un utilisateur avec une image dans la base de données
+        public static void InsertUserWithImage(string nom, string prenom, byte[] photoBytes, byte[] imagBytes)
+        {
+            try
+            {
+                // Construction de la requête SQL avec des paramètres
+                string query = "INSERT INTO tb1 (nom, prenom, photo, imag) VALUES (@nom, @prenom, @photoBytes, @imagBytes)";
+
+                // Ajout des paramètres à la commande SQL
+                SqlParameter[] parameters =
+                {
+            new SqlParameter("@nom", SqlDbType.VarChar) { Value = nom },
+            new SqlParameter("@prenom", SqlDbType.VarChar) { Value = prenom },
+            new SqlParameter("@photoBytes", SqlDbType.VarBinary) { Value = photoBytes },
+            new SqlParameter("@imagBytes", SqlDbType.VarBinary) { Value = imagBytes }
+        };
+
+                // Exécution de la requête avec les paramètres
+                DatabaseManager.Instance.ExecuteNonQuery2(query, parameters);
+
+                Console.WriteLine("L'utilisateur a été inséré avec succès dans la table Users.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur lors de l'insertion de l'utilisateur : " + ex.Message);
+            }
+        }
+
+
+        public static  (byte[], byte[]) SelectImages()
+        {
+            byte[] photoBytes = null;
+            byte[] imagBytes = null;
+
+            try
+            {
+                string query = "SELECT photo, imag FROM tb1 WHERE nom='nom'";
+                DataTable dataTable = DatabaseManager.Instance.ExecuteQuery(query);
+
+                if (dataTable.Rows.Count > 0)
+                {
+                    DataRow row = dataTable.Rows[0];
+                    if (row["photo"] != DBNull.Value)
+                    {
+                        photoBytes = (byte[])row["photo"];
+                    }
+                    if (row["imag"] != DBNull.Value)
+                    {
+                        imagBytes = (byte[])row["imag"];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur lors de la récupération des images : " + ex.Message);
+            }
+
+            return (photoBytes, imagBytes);
+        }
+
+
+
+
+
         /******************* operation de user ***********************/
+
+        internal static int AddUserWithComptes(User user, Compte compte1, Compte compte2)
+        {
+            try
+            {
+                // Insérer l'utilisateur dans la table "Users"
+                string queryUser = $"INSERT INTO users (nom, prenom, password,email) VALUES ('{user.nom}', '{user.prenom}', '{user.email}', '{user.password}')";
+                DatabaseManager.Instance.ExecuteNonQuery(queryUser);
+
+                // Obtenir l'ID de l'utilisateur nouvellement inséré
+                string queryUserId = $"SELECT MAX(Id) FROM Users";
+                int userId = Convert.ToInt32(DatabaseManager.Instance.ExecuteScalar(queryUserId));
+
+                // Insérer les comptes associés à l'utilisateur dans la table "Compte"
+                string queryCompte1 = $"INSERT INTO Compte (Nom, Solde, idUser) VALUES ('{compte1.Nom}', {compte1.Solde}, {userId})";
+                string queryCompte2 = $"INSERT INTO Compte (Nom, Solde, idUser) VALUES ('{compte2.Nom}', {compte2.Solde}, {userId})";
+                DatabaseManager.Instance.ExecuteNonQuery(queryCompte1);
+                DatabaseManager.Instance.ExecuteNonQuery(queryCompte2);
+
+                Console.WriteLine("Utilisateur et comptes ajoutés avec succès.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur lors de l'ajout de l'utilisateur et des comptes : " + ex.Message);
+            }
+            return userId;
+        }
+
 
         // Méthode pour verifier si user existe ou pas 
         internal static User Authentifier(string mail, string motDePasse)
@@ -47,6 +145,9 @@ namespace GYProject.Classes.userAll
                     user.prenom = row["prenom"].ToString();
                     user.email = row["email"].ToString();
                     user.password = row["password"].ToString();
+                    // Récupération des données binaires de la colonne image
+                    byte[] imageData = row["photo"] as byte[];
+                    user.img = imageData;
                 }
             }
             catch (Exception ex)
@@ -55,6 +156,56 @@ namespace GYProject.Classes.userAll
             }
             return user;
         }
+
+        internal static List<Transaction> GetRecentTransactions(int userId)
+        {
+            // Obtenir la date d'aujourd'hui
+            DateTime today = DateTime.Today;
+
+            // Obtenir toutes les transactions de l'utilisateur ayant une date supérieure à aujourd'hui
+            List<Transaction> recentTransactions = GetTransactionsAfterDate(userId, today);
+
+            // Trier les transactions par date décroissante
+            recentTransactions.Sort((t1, t2) => t2.Date.CompareTo(t1.Date));
+
+            // Retourner les deux dernières transactions
+            return recentTransactions.Take(2).ToList();
+        }
+
+
+        //les transaction apres aujordhui
+        internal static List<Transaction> GetTransactionsAfterDate(int userId, DateTime date)
+        {
+            List<Transaction> transactions = new List<Transaction>();
+
+            try
+            {
+                // Construction de la requête SQL pour récupérer les transactions de l'utilisateur après une certaine date
+                string query = $"SELECT * FROM transactions WHERE idUser = {userId} AND Date > '{date.ToString("yyyy-MM-dd")}'";
+
+                // Exécution de la requête à l'aide de la classe DatabaseManager et récupération des résultats
+                DataTable dataTable = DatabaseManager.Instance.ExecuteQuery(query);
+
+                // Transformation des lignes de données en objets Transaction
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    Transaction transaction = new Transaction();
+                    transaction.ID = Convert.ToInt32(row["ID"]);
+                    transaction.Description = row["Description"].ToString();
+                    transaction.Montant = Convert.ToDecimal(row["Montant"]);
+                    transaction.Date = Convert.ToDateTime(row["Date"]);
+                    transaction.Type = row["Type"].ToString();
+                    transactions.Add(transaction);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur lors de la récupération des transactions : " + ex.Message);
+            }
+
+            return transactions;
+        }
+
 
 
         // Méthode pour insérer un nouvel utilisateur dans la base de données
@@ -178,6 +329,7 @@ namespace GYProject.Classes.userAll
                     transaction.Description = row["Description"].ToString();
                     transaction.Montant = Convert.ToDecimal(row["Montant"]);
                     transaction.Date = Convert.ToDateTime(row["Date"]);
+                    transaction.Type = row["Type"].ToString();
                     transactions.Add(transaction);
                 }
 
@@ -316,7 +468,7 @@ namespace GYProject.Classes.userAll
             analysis.AppendLine("État financier :");
             analysis.AppendLine(financialStatus);
 
-            return analysis.ToString();
+            return financialStatus+" alanyse: "+analysis.ToString();
         }
 
 
@@ -403,6 +555,8 @@ namespace GYProject.Classes.userAll
                 Console.WriteLine("Erreur lors de l'effectuation de la transaction : " + ex.Message);
             }
         }
+
+
 
 
 
