@@ -343,7 +343,7 @@
             // 
             // AddIncome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.desc);
             this.Controls.Add(this.label14);
