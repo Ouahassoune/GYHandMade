@@ -2,6 +2,7 @@ using GYProject.Classes;
 using GYProject.Classes.userAll;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
@@ -17,21 +18,26 @@ namespace GYHandMade
         [STAThread]
         static void Main()
         {
-           // User us = userDB.GetUserById(9);
-            //us.AllTransaction();
-            //List<Transaction> transactions = TransactionDB.GetAllTransactions();
-            //foreach (Transaction transaction in transactions)
-            //{
-              //  Console.WriteLine($"ID: {transaction.ID}, type: {transaction.Type},Description: {transaction.Description}, Montant: {transaction.Montant}, Date: {transaction.Date}");
-           // }
+
+
+           
+
+            /* User us = userDB.GetUserById(9);
+
+              List<Transaction> transactions = us.AllTransaction();
+              foreach (Transaction transaction in transactions)
+              {
+                 Console.WriteLine($" dans le main ID: {transaction.ID}, type: {transaction.Type},Description: {transaction.Description}, Montant: {transaction.Montant}, Date: {transaction.Date}");
+              }
+              */
             SetProcessDPIAware();
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-        
+              Application.EnableVisualStyles();
+              Application.SetCompatibleTextRenderingDefault(false);
+              Application.Run(new testForm());
+
             //HII YOUSSEFFFFF
         }
-        [DllImport("user32.dll")]
-        private static extern bool SetProcessDPIAware();
+         [DllImport("user32.dll")]
+         private static extern bool SetProcessDPIAware();
     }
 }

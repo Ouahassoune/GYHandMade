@@ -29,74 +29,42 @@ namespace GYHandMade
             Udashboard.Dock = DockStyle.Fill;
             user=userDB.GetUserById(9);
             label2.Text = "Hello, "+user.nom+"!";
-            FuturTransaction();
-            //lastTransaction();
+            lastTransaction();
         }
-
-        public void FuturTransaction()
-        {
-            List<Transaction> liste = user.FuturTransactions(); // Obtenez la liste des transactions futures
-            if (liste.Count >= 2) // Vérifiez si la liste contient au moins 2 transactions
-            {
-                // Parcourir les deux premières transactions de la liste
-                for (int i = 0; i < 2; i++)
-                {
-                    Transaction transaction = liste[i];
-                    if (i == 0)
-                    {
-                        catg1.Text = transaction.category; // Mettez la catégorie de la première transaction dans catg1
-                        prix1.Text =  "-$" + transaction.Montant.ToString(); // Mettez le montant de la première transaction dans prix1
-                        date11.Text = transaction.Date.ToShortDateString(); // Mettez la date de la première transaction dans date11
-                    }
-                    else if (i == 1)
-                    {
-                        catg2.Text = transaction.category; // Mettez la catégorie de la deuxième transaction dans catg2
-                        prix2.Text ="-$"+ transaction.Montant.ToString(); // Mettez le montant de la deuxième transaction dans prix2
-                        date22.Text = transaction.Date.ToShortDateString(); // Mettez la date de la deuxième transaction dans date22
-                    }
-                }
-            }
-            else
-            {
-                // Gérer le cas où la liste contient moins de 2 transactions
-                // Afficher un message ou prendre toute autre action appropriée
-            }
-        }
-
         //remplir la liste des 3 transactions les plus recentes
-        /*   public void lastTransaction()
-           {
-               // Récupérer les trois dernières transactions de l'utilisateur
-               List<Transaction> liste = user.GetLastThreeTransactions();
+        public void lastTransaction()
+        {
+            // Récupérer les trois dernières transactions de l'utilisateur
+            List<Transaction> liste = user.GetLastThreeTransactions();
 
-               // Vérifier si la liste contient au moins une transaction
-               if (liste.Count > 0)
-               {
-                   // Remplir le premier label avec les données de la première transaction
-                   amount1.Text = liste[0].Montant.ToString();
-                   cat1.Text = liste[0].category;
-                   date1.Text = liste[0].Date.ToString();
-               }
+            // Vérifier si la liste contient au moins une transaction
+            if (liste.Count > 0)
+            {
+                // Remplir le premier label avec les données de la première transaction
+                amount1.Text = liste[0].Montant.ToString();
+                cat1.Text = liste[0].category;
+                date1.Text = liste[0].Date.ToString();
+            }
 
-               // Vérifier si la liste contient au moins deux transactions
-               if (liste.Count > 1)
-               {
-                   // Remplir le deuxième label avec les données de la deuxième transaction
-                   amount2.Text = liste[1].Montant.ToString();
-                   cat2.Text = liste[1].category;
-                   date2.Text = liste[1].Date.ToString();
-               }
+            // Vérifier si la liste contient au moins deux transactions
+            if (liste.Count > 1)
+            {
+                // Remplir le deuxième label avec les données de la deuxième transaction
+                amount2.Text = liste[1].Montant.ToString();
+                cat2.Text = liste[1].category;
+                date2.Text = liste[1].Date.ToString();
+            }
 
-               // Vérifier si la liste contient au moins trois transactions
-               if (liste.Count > 2)
-               {
-                   // Remplir le troisième label avec les données de la troisième transaction
-                   amount3.Text = liste[2].Montant.ToString();
-                   cat3.Text = liste[2].category;
-                   date3.Text = liste[2].Date.ToString();
-               }
-           }
-        */
+            // Vérifier si la liste contient au moins trois transactions
+            if (liste.Count > 2)
+            {
+                // Remplir le troisième label avec les données de la troisième transaction
+                amount3.Text = liste[2].Montant.ToString();
+                cat3.Text = liste[2].category;
+                date3.Text = liste[2].Date.ToString();
+            }
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {

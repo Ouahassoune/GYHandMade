@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -40,6 +41,11 @@ namespace GYHandMade.UserControls
             string category = "category";
             Transaction tr = new Transaction(description, montant, "depense", dateSelectionnee, category);
             user.AjouterTransaction(tr);
+            desc.Text = "";
+            date.Text = "";
+            amount.Text = "";
+             Form1 f = new Form1();
+            f.FuturTransaction();
         }
 
         private void AddExpense_Load(object sender, EventArgs e)

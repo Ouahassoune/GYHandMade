@@ -56,5 +56,10 @@ namespace GYHandMade.UserControls
         {
 
         }
+
+        private void AddTransaction_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

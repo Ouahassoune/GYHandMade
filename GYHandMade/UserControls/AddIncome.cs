@@ -49,6 +49,11 @@ namespace GYHandMade.UserControls
             string category = "category";
             Transaction tr = new Transaction(description, montant, "revenu", dateSelectionnee, category);
             user.AjouterTransaction(tr);
+            desc.Text = "";
+            date.Text = "";
+            amount.Text = "";
+            Form1 f = new Form1();
+            f.FuturTransaction();
         }
     }
 }
