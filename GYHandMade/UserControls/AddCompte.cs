@@ -8,6 +8,11 @@ namespace GYHandMade.UserControls
     {
         UserControls.Mo Umo = new UserControls.Mo();
         UserControls.Moz Umon = new UserControls.Moz();
+        UserControls.Transfer Ut = new UserControls.Transfer();
+
+        UserControls.Mo1 Umo1 = new UserControls.Mo1();
+        UserControls.Moz1 Umon1 = new UserControls.Moz1();
+        UserControls.Transfer1 Ut1 = new UserControls.Transfer1();
 
         //PictureBox pictureBoxOverlay = new PictureBox(); // PictureBox for the semi-transparent overlay
 
@@ -70,6 +75,63 @@ namespace GYHandMade.UserControls
             // Add the dashboard user control to panel4
             panel4.Controls.Add(Umon);
             Umon.Dock = DockStyle.Fill;
+        }
+
+        private void bunifuImageButton9_Click(object sender, EventArgs e)
+        {
+            panel4.Visible = true;
+            panel4.BringToFront();
+
+            // Clear existing controls from panel4
+            panel4.Controls.Clear();
+
+            // Add the dashboard user control to panel4
+            panel4.Controls.Add(Ut);
+            Ut.Dock = DockStyle.Fill;
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void bunifuImageButton5_Click(object sender, EventArgs e)
+        {
+            panel4.Visible = true;
+            panel4.BringToFront();
+
+            // Clear existing controls from panel4
+            panel4.Controls.Clear();
+
+            // Add the dashboard user control to panel4
+            panel4.Controls.Add(Ut1);
+            Ut1.Dock = DockStyle.Fill;
+        }
+
+        private void bunifuImageButton4_Click(object sender, EventArgs e)
+        {
+            panel4.Visible = true;
+            panel4.BringToFront();
+
+            // Clear existing controls from panel4
+            panel4.Controls.Clear();
+
+            // Add the dashboard user control to panel4
+            panel4.Controls.Add(Umo1);
+            Umo1.Dock = DockStyle.Fill;
+        }
+
+        private void bunifuImageButton3_Click(object sender, EventArgs e)
+        {
+            panel4.Visible = true;
+            panel4.BringToFront();
+
+            // Clear existing controls from panel4
+            panel4.Controls.Clear();
+
+            // Add the dashboard user control to panel4
+            panel4.Controls.Add(Umon1);
+            Umon1.Dock = DockStyle.Fill;
         }
     }
 }

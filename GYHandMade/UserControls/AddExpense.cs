@@ -10,6 +10,7 @@ namespace GYHandMade.UserControls
     {
         internal User user = null;
         private Color borderColor = Color.Red;
+        private string selectedCategory = "";
 
         // New property to specify the layout mode of the background image
         public new ImageLayout BackgroundImageLayout { get; set; } = ImageLayout.Stretch;
@@ -26,22 +27,44 @@ namespace GYHandMade.UserControls
 
         private void guna2GradientTileButton1_Click(object sender, EventArgs e)
         {
+            // Get other expense details
             decimal montant = decimal.Parse(amount.Text);
             DateTime dateSelectionnee = date.Value;
             string description = desc.Text;
-            string category = "category";
-            Transaction tr = new Transaction(description, montant, "depense", dateSelectionnee, category);
-            user.AjouterTransaction(tr);
+
+            // Check if a category is selected
+            if (!string.IsNullOrEmpty(selectedCategory))
+            {
+                // Add the transaction using the selected category
+                Transaction tr = new Transaction(description, montant, "depense", dateSelectionnee, selectedCategory);
+                user.AjouterTransaction(tr);
+            }
+            else
+            {
+                // Inform the user to select a category
+                MessageBox.Show("Please select a category.");
+            }
         }
 
         private void guna2GradientTileButton1_Click_1(object sender, EventArgs e)
         {
+            // Get other expense details
             decimal montant = decimal.Parse(amount.Text);
             DateTime dateSelectionnee = date.Value;
             string description = desc.Text;
-            string category = "category";
-            Transaction tr = new Transaction(description, montant, "depense", dateSelectionnee, category);
-            user.AjouterTransaction(tr);
+
+            // Check if a category is selected
+            if (!string.IsNullOrEmpty(selectedCategory))
+            {
+                // Add the transaction using the selected category
+                Transaction tr = new Transaction(description, montant, "depense", dateSelectionnee, selectedCategory);
+                user.AjouterTransaction(tr);
+            }
+            else
+            {
+                // Inform the user to select a category
+                MessageBox.Show("Please select a category.");
+            }
         }
 
         private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
@@ -83,6 +106,9 @@ namespace GYHandMade.UserControls
 
                 // Output a debug message
                 Console.WriteLine("Image loaded successfully.");
+
+                // Get the category name from the PictureBox's Tag property and store it
+                selectedCategory = clickedPictureBox.Tag.ToString();
             }
             catch (Exception ex)
             {
@@ -92,6 +118,21 @@ namespace GYHandMade.UserControls
 
             // Perform other actions based on category selection
             // For example, you can show category details, etc.
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

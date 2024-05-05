@@ -127,17 +127,41 @@
     <Compile Include="UserControls\Mo.Designer.cs">
       <DependentUpon>Mo.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Mo1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Mo1.Designer.cs">
+      <DependentUpon>Mo1.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Moz.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\Moz.Designer.cs">
       <DependentUpon>Moz.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Moz1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Moz1.Designer.cs">
+      <DependentUpon>Moz1.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ToHistory.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\ToHistory.Designer.cs">
       <DependentUpon>ToHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Transfer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Transfer.Designer.cs">
+      <DependentUpon>Transfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Transfer1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Transfer1.Designer.cs">
+      <DependentUpon>Transfer1.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UHistory.cs">
       <SubType>UserControl</SubType>
@@ -180,11 +204,23 @@
     <EmbeddedResource Include="UserControls\Mo.resx">
       <DependentUpon>Mo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Mo1.resx">
+      <DependentUpon>Mo1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Moz.resx">
       <DependentUpon>Moz.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Moz1.resx">
+      <DependentUpon>Moz1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ToHistory.resx">
       <DependentUpon>ToHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Transfer.resx">
+      <DependentUpon>Transfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Transfer1.resx">
+      <DependentUpon>Transfer1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UHistory.resx">
       <DependentUpon>UHistory.cs</DependentUpon>

@@ -47,13 +47,14 @@ namespace GYHandMade.UserControls
 
             // Set properties of the UHistory control based on the provided history item
 
-            //Typep = historyItem.Type;
             Typep = "revenue";
+            
             Description = historyItem.Description;
             Date = historyItem.Date;
             Montant = historyItem.Montant;
             //category = historyItem.category;
-            category = "Gift";
+            category = "Gym";
+            
 
             // Set the text color based on the type
             if (Typep == "revenue")
@@ -98,26 +99,26 @@ namespace GYHandMade.UserControls
             categoryPicturePaths = new Dictionary<string, string>
 {
     // Income categories
-    { "Salary", "path/to/salary_picture.jpg" },
-    { "Bonus", "path/to/bonus_picture.jpg" },
-    { "Interest", "path/to/interest_picture.jpg" },
-    { "Investment", "path/to/investment_picture.jpg" },
+    { "Salary", "D:/GYHandMade/GYHandMade/cat/14.png" },
+    { "Other", "D:/GYHandMade/GYHandMade/cat/Blue Flat Illustrative Finance Company Logo (11).png" },
+    { "Interest", "D:/GYHandMade/GYHandMade/cat/13.png" },
+    { "Investment", "D:/GYHandMade/GYHandMade/cat/16.png" },
     { "Gift", "D:/GYHandMade/GYHandMade/category/Gift.png" },
     
     // Expense categories
-    { "Rent", "D:/GYHandMade/GYHandMade/category/Rent.png" },
-    { "Utilities", "path/to/utilities_picture.jpg" },
-    { "Groceries", "path/to/groceries_picture.jpg" },
-    { "Transportation", "path/to/transportation_picture.jpg" },
+    { "Rent", "D:/GYHandMade/GYHandMade/cat/1.png" },
+    { "Gym", "D:/GYHandMade/GYHandMade/cat/12.png" },
+    { "Groceries", "D:/GYHandMade/GYHandMade/cat/6.png" },
+    { "Transportation", "D:/GYHandMade/GYHandMade/cat/5.png" },
     { "Entertainment", "D:/GYHandMade/GYHandMade/category/Entertainment.png"},
     
     // Common categories for both income and expenses
-    { "Healthcare", "path/to/healthcare_picture.jpg" },
+    { "Healthcare", "D:/GYHandMade/GYHandMade/cat/9.png" },
     { "Education", "path/to/education_picture.jpg" },
-    { "Savings", "path/to/savings_picture.jpg" },
+    { "Savings", "D:/GYHandMade/GYHandMade/cat/15.png" },
     { "Debt Repayment", "path/to/debt_repayment_picture.jpg" },
-    { "Insurance", "path/to/insurance_picture.jpg" },
-    { "Taxes", "path/to/taxes_picture.jpg" },
+    { "Insurance", "D:/GYHandMade/GYHandMade/cat/10.png" },
+    { "Taxes", "D:/GYHandMade/GYHandMade/cat/11.png" },
     
     // Add more common categories and their corresponding picture paths as needed
 };

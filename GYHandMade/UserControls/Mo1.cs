@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GYHandMade.UserControls
 {
-    public partial class Moz : UserControl
+    public partial class Mo1 : UserControl
     {
-        public Moz()
+        public Mo1()
         {
             InitializeComponent();
         }

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace GYHandMade.UserControls
 {
-    public partial class Moz : UserControl
+    public partial class Transfer : UserControl
     {
-        public Moz()
+        public Transfer()
         {
             InitializeComponent();
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void closebutton_Click(object sender, EventArgs e)
