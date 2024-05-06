@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToHistory));
             this.panel2 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,8 +43,10 @@
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.pictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -118,6 +121,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.pictureBox);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(69, 57);
@@ -132,6 +136,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1716, 1183);
             this.panel3.TabIndex = 13;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label3
             // 
@@ -158,6 +163,20 @@
             this.guna2Elipse4.BorderRadius = 25;
             this.guna2Elipse4.TargetControl = this.panel2;
             // 
+            // pictureBox
+            // 
+            this.pictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.Location = new System.Drawing.Point(1567, 35);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pictureBox.ShadowDecoration.Parent = this.pictureBox;
+            this.pictureBox.Size = new System.Drawing.Size(94, 94);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 52;
+            this.pictureBox.TabStop = false;
+            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
+            // 
             // ToHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -171,6 +190,7 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -190,5 +210,6 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox pictureBox;
     }
 }

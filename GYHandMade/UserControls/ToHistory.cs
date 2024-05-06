@@ -1,9 +1,11 @@
 ﻿using GYProject.Classes;
 using GYProject.Classes.userAll;
+using GYProject.Database;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,6 +21,7 @@ namespace GYHandMade.UserControls
         
 
         UserControls.UHistory UHistory = new UserControls.UHistory();
+        UserControls.Rp URp = new UserControls.Rp();
         public ToHistory()
         {
           
@@ -75,9 +78,20 @@ namespace GYHandMade.UserControls
             }
         }
 
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox_Click(object sender, EventArgs e)
+        {  
+            panel1.Controls.Clear();
+            panel2.Visible = false;
+            panel1.Controls.Add(URp);
+            URp.Dock = DockStyle.Fill;
+            
 
 
-
-
+        }
     }
 }
