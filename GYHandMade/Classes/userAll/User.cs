@@ -35,6 +35,18 @@ namespace GYProject.Classes.userAll
 
         /**********************les methodes de user ***********/
         //ajouter user
+        public void TransferAmount(String sourceAccount, String destinationAccount, decimal amount) {
+            userDB.TransferAmoun(this.id, sourceAccount, destinationAccount, amount);
+
+        }
+
+
+
+        public decimal GetSolde(String nameofcompte)
+        {
+            return userDB.GetSold(this.id,nameofcompte);
+
+        }
         public void AddUser()
         {
             Compte cm11 = new Compte("Espece", 0);
