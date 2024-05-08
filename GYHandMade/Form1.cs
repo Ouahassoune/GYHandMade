@@ -31,7 +31,15 @@ namespace GYHandMade
             user=userDB.GetUserById(9);
             label2.Text = "Hello, "+user.nom+"!";
             lastTransaction();
+            this.user = use;
+
         }
+        internal void setUser(User use)
+        {
+            this.user = use;
+
+        }
+
         //remplir la liste des 3 transactions les plus recentes
         public void lastTransaction()
         {
@@ -91,6 +99,7 @@ namespace GYHandMade
             MainPanel.Controls.Add(Udashboard);
             Udashboard.Dock = DockStyle.Fill;
 
+
         }
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
@@ -101,6 +110,7 @@ namespace GYHandMade
             // Add the dashboard user control to the form
             MainPanel.Controls.Add(UAddTransaction);
             UAddTransaction.Dock = DockStyle.Fill;
+            UAddTransaction.setUser(user);
         }
 
         private void bunifuImageButton3_Click(object sender, EventArgs e)

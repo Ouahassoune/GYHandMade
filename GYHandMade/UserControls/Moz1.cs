@@ -21,7 +21,11 @@ namespace GYHandMade.UserControls
         {
             InitializeComponent();
         }
+        internal void setUser(User use)
+        {
+            this.user = use;
 
+        }
         private void closebutton_Click(object sender, EventArgs e)
         {
             this.Parent.Hide();
@@ -48,6 +52,11 @@ namespace GYHandMade.UserControls
             user.RemoveFromCompte(nameOfCompte, amount);
             inputTextBox.Text = "";
             cmp.remplirLabels();
+
+        }
+
+        private void guna2GradientTileButton1_Click_1(object sender, EventArgs e)
+        {
 
         }
     }

@@ -22,7 +22,11 @@ namespace GYHandMade.UserControls
             InitializeComponent();
             user = userDB.GetUserById(9);
         }
+        internal void setUser(User use)
+        {
+            this.user = use;
 
+        }
         private void AddIncome_Load(object sender, EventArgs e)
         {
 

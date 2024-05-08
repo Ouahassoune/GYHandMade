@@ -21,6 +21,11 @@ namespace GYHandMade.UserControls
             UAddIncome.Dock = DockStyle.Fill;
 
         }
+        internal void setUser(User use)
+        {
+            this.user = use;
+
+        }
 
         private void Label1_Click(object sender, EventArgs e)
         {

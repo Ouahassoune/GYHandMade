@@ -20,7 +20,11 @@ namespace GYHandMade.UserControls
         {
             InitializeComponent();
         }
+        internal void setUser(User use)
+        {
+            this.user = use;
 
+        }
         private void Label1_Click(object sender, EventArgs e)
         {
 
@@ -49,6 +53,11 @@ namespace GYHandMade.UserControls
             user.TransferAmount("Banc", "Espece", amount);
             inputTextBox.Text = "";
             cmp.remplirLabels();
+        }
+
+        private void Transfer_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

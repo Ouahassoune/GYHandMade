@@ -18,7 +18,11 @@ namespace GYHandMade.UserControls
         {
             InitializeComponent();
         }
+        internal void setUser(User use)
+        {
+            this.user = use;
 
+        }
         private void reportViewer1_Load(object sender, EventArgs e)
         {
             // Créez une instance de DatabaseManager

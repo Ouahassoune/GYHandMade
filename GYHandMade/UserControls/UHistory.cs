@@ -32,7 +32,7 @@ namespace GYHandMade.UserControls
             // Initialize the category-picture mapping
             InitializeCategoryPictureMapping();
         }
-
+       
         private void label2_Click(object sender, EventArgs e)
         {
 

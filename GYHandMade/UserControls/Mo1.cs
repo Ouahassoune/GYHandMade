@@ -30,7 +30,11 @@ namespace GYHandMade.UserControls
         {
             this.user = user;
         }
+        internal void setUser(User use)
+        {
+            this.user = use;
 
+        }
         private void inputTextBox_TextChanged(object sender, EventArgs e)
         {
 
@@ -56,6 +60,11 @@ namespace GYHandMade.UserControls
             user.AddToCompte(nameOfCompte, amount);
             inputTextBox.Text = "";
             cmp.remplirLabels();
+        }
+
+        private void Mo1_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

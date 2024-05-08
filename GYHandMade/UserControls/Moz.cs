@@ -21,6 +21,11 @@ namespace GYHandMade.UserControls
         {
             InitializeComponent();
         }
+        internal void setUser(User use)
+        {
+            this.user = use;
+
+        }
         internal void envoyer(User user, AddCompte addCompte)
         {
             this.user = user;
