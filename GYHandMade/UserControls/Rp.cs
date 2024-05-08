@@ -1,4 +1,5 @@
-﻿using GYProject.Database;
+﻿using GYProject.Classes.userAll;
+using GYProject.Database;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,8 @@ namespace GYHandMade.UserControls
 {
     public partial class Rp : UserControl
     {
+        internal User user = null;
+
         public Rp()
         {
             InitializeComponent();

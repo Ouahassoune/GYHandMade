@@ -15,22 +15,37 @@ namespace GYHandMade
 {
     public partial class Form1 : Form
 
-    {  internal User user= new User(); 
-        UserControls.Dashboard Udashboard = new UserControls.Dashboard();
+    {  
+
         UserControls.AddTransaction UAddTransaction = new UserControls.AddTransaction();
-   
+        internal  UserControls.Dashboard Udashboard = new UserControls.Dashboard();
         UserControls.ToHistory UHistory = new UserControls.ToHistory();
         UserControls.AddCompte UCompte = new UserControls.AddCompte();
-      
-        internal Form1(User use)
+        internal User user = new User();
+
+        internal Form1(User use,Dashboard uds)
         {
             InitializeComponent();
+
+            // Définir l'utilisateur avant de créer le Dashboard UserControl
+            this.user = use;
+            this.Udashboard = uds;
+
+            // Créer une instance de Dashboard UserControl
+
+            // Passer l'utilisateur au Dashboard UserControl
+            
+            // Ajouter le Dashboard UserControl au formulaire principal
             MainPanel.Controls.Add(Udashboard);
             Udashboard.Dock = DockStyle.Fill;
-            user=userDB.GetUserById(9);
-            label2.Text = "Hello, "+user.nom+"!";
+
+            label2.Text = "Hello, " + user.nom + "!";
             lastTransaction();
-            this.user = use;
+
+        }
+        internal void  setUdashboard(UserControls.Dashboard udashboard)
+        {
+            this.Udashboard = udashboard;
 
         }
         internal void setUser(User use)
@@ -96,6 +111,8 @@ namespace GYHandMade
 
             // Add the dashboard user control to the form
             MainPanel.Controls.Add(Udashboard);
+            Udashboard.setUser(user);
+            Udashboard.remplir();
             Udashboard.Dock = DockStyle.Fill;
 
 
@@ -110,6 +127,7 @@ namespace GYHandMade
             MainPanel.Controls.Add(UAddTransaction);
             UAddTransaction.Dock = DockStyle.Fill;
             UAddTransaction.setUser(user);
+            UAddTransaction.setUser(user);
         }
 
         private void bunifuImageButton3_Click(object sender, EventArgs e)
@@ -120,6 +138,7 @@ namespace GYHandMade
             // Add the dashboard user control to the form
             MainPanel.Controls.Add(UHistory);
             UHistory.Dock = DockStyle.Fill;
+            UHistory.setUser(user);
         }
 
         private void MainPanel_Paint(object sender, PaintEventArgs e)
@@ -131,10 +150,26 @@ namespace GYHandMade
         {
             // Clear existing controls from the form
             MainPanel.Controls.Clear();
-
+            UCompte.setUser(user);
             // Add the dashboard user control to the form
             MainPanel.Controls.Add(UCompte);
             UCompte.Dock = DockStyle.Fill;
+           
+        }
+
+        private void bunifuImageButton5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuImageButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

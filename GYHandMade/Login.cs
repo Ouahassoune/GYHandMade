@@ -22,15 +22,18 @@ namespace GYHandMade
         {
             string email = inputTextBox.Text;
             string password = guna2TextBox1.Text;
-          
 
-                // Appeler la méthode d'authentification de la classe userDB
-                User user = userDB.Authentifier(email, password);
+
+            // Appeler la méthode d'authentification de la classe userDB
+            User user = userDB.Authentifier(email, password);
 
                 // Vérifier si l'utilisateur a été authentifié avec succès
                 if (user != null)
                 {
-                Form1 form1 = new Form1(user);
+                UserControls.Dashboard Udashboard = new UserControls.Dashboard(user);
+                Udashboard.remplir();
+                Form1 form1 = new Form1(user, Udashboard);
+
 
                 // Afficher la nouvelle fenêtre
                 form1.Show();

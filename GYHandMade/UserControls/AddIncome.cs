@@ -20,7 +20,6 @@ namespace GYHandMade.UserControls
         public AddIncome()
         {
             InitializeComponent();
-            user = userDB.GetUserById(9);
         }
         internal void setUser(User use)
         {
@@ -53,10 +52,7 @@ namespace GYHandMade.UserControls
             decimal montant = decimal.Parse(amount.Text);
             DateTime dateSelectionnee = date.Value;
             string description = desc.Text;
-            
-            
-            
-
+     
             // Check if a category is selected
             if (!string.IsNullOrEmpty(selectedCategory))
             {

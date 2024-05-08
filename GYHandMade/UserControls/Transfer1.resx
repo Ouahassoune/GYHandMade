@@ -181,7 +181,7 @@
   <data name="inputTextBox.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAABPJJREFUaEPtmVuIVVUYx6cku9lLEV2egih7qknLSqinbpZP+VIERfQgCF0oEMFq
+        DQAACw0B7QfALAAABPJJREFUaEPtmVuIVVUYx6cku9lLEV2egih7qknLSqinbpZP+VIERfQgCF0oEMFq
         qJACX4xEHERHJ+bKzHQYbZr0oZ7DIohERSdSsmAqNZ1MSabfd/ifw7e/ffaZ45nZ+/gwf/iz9/4u6/uv
         vddae+1z2uYxj8scg4ODi/r6+lb09/d/NDAwsJvjQY5/wQtw2qjQKqanp6/QaWthQujA04gchOcqgrOo
         tCro7AfYx7kBKzs6Oq6UuVhQ/DlE/OCFzkSlljE2NnY1tt8rPjp1FN4nd/6gA3dScG9FwKVQTZRBGy96
@@ -211,7 +211,7 @@
   <data name="bunifuImageButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAABOpJREFUaEPtmVtMHFUYx9FUY7QmRk1NrL7WJxN9svHBS1Jb09DdclnYncLOLsGq
+        DQAACw0B7QfALAAABOpJREFUaEPtmVtMHFUYx9FUY7QmRk1NrL7WJxN9svHBS1Jb09DdclnYncLOLsGq
         TQrtUgiBhdntFnbAVuNj41v7bprUkkia1CiJl0ALsRdrW4ReXC4t7HJJuSz7+X2z30yH2WEtpOzMJvyT
         fzKc3XPm/PbMd85/l4INbSgPVFJ35T2+zE/tPHz5ZUdNX9cn/q4UN+Wf9tRc7NxV3b24w3cWyNycP6qK
         wrt+GX5WAfIOpLIdXvF1wLcIkfR3wDKIvABxSfCsT4YjCJAgANUaRFUXlDYMwr7Q5FmXNLqZu9lPCPGT

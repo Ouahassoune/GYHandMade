@@ -94,6 +94,10 @@ namespace GYProject.Classes.userAll
         public decimal GetAccountBalance()
         {
             // Calculer le solde du compte (total des revenus - total des dépenses)
+            if(getTotalIncomes() - TotalExpenses() < 0)
+            {
+                MessageBox.Show("Add to your incomes to continue this transaction", "Erreur de transfert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             return getTotalIncomes() - TotalExpenses();
         }
 

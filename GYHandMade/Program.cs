@@ -20,7 +20,8 @@ namespace GYHandMade
         {
 
 
-           
+            //User user = new User("youssef", "youssef", "youssef", "youssef",null);
+            //user.AddUser();
 
             /* User us = userDB.GetUserById(9);
 

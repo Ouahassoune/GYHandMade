@@ -471,8 +471,8 @@ namespace GYProject.Classes.userAll
             try
             {
                 // Construction de la requête SQL pour calculer la somme des dépenses de l'utilisateur
-                string query = $"SELECT SUM(Montant) AS Total FROM transactions " +
-                               $"WHERE idUser = {userId} AND Type = 'revenu'";
+                string query = $"SELECT SUM(Solde) AS Total FROM Compte " +
+                               $"WHERE idUser = {userId} ";
 
                 // Exécution de la requête à l'aide de la classe DatabaseManager et récupération du résultat
                 DataTable dataTable = DatabaseManager.Instance.ExecuteQuery(query);

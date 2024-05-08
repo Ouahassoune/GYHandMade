@@ -62,7 +62,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Location = new System.Drawing.Point(17, 224);
-            this.panel6.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel6.Margin = new System.Windows.Forms.Padding(1);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(366, 350);
             this.panel6.TabIndex = 36;
@@ -75,7 +75,7 @@
             this.panel5.Controls.Add(this.label24);
             this.panel5.Controls.Add(this.label25);
             this.panel5.Location = new System.Drawing.Point(462, 76);
-            this.panel5.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel5.Margin = new System.Windows.Forms.Padding(1);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(182, 120);
             this.panel5.TabIndex = 35;
@@ -97,7 +97,7 @@
             this.bunifuImageButton11.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton11.Image")));
             this.bunifuImageButton11.ImageActive = null;
             this.bunifuImageButton11.Location = new System.Drawing.Point(6, 57);
-            this.bunifuImageButton11.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.bunifuImageButton11.Margin = new System.Windows.Forms.Padding(1);
             this.bunifuImageButton11.Name = "bunifuImageButton11";
             this.bunifuImageButton11.Size = new System.Drawing.Size(37, 34);
             this.bunifuImageButton11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -137,7 +137,7 @@
             this.panel4.Controls.Add(this.label21);
             this.panel4.Controls.Add(this.label22);
             this.panel4.Location = new System.Drawing.Point(236, 76);
-            this.panel4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel4.Margin = new System.Windows.Forms.Padding(1);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(182, 120);
             this.panel4.TabIndex = 34;
@@ -159,7 +159,7 @@
             this.bunifuImageButton10.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton10.Image")));
             this.bunifuImageButton10.ImageActive = null;
             this.bunifuImageButton10.Location = new System.Drawing.Point(6, 57);
-            this.bunifuImageButton10.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.bunifuImageButton10.Margin = new System.Windows.Forms.Padding(1);
             this.bunifuImageButton10.Name = "bunifuImageButton10";
             this.bunifuImageButton10.Size = new System.Drawing.Size(37, 34);
             this.bunifuImageButton10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -199,10 +199,11 @@
             this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.label17);
             this.panel3.Location = new System.Drawing.Point(17, 76);
-            this.panel3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel3.Margin = new System.Windows.Forms.Padding(1);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(182, 120);
             this.panel3.TabIndex = 33;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // transactions
             // 
@@ -222,7 +223,7 @@
             this.bunifuImageButton9.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton9.Image")));
             this.bunifuImageButton9.ImageActive = null;
             this.bunifuImageButton9.Location = new System.Drawing.Point(6, 57);
-            this.bunifuImageButton9.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.bunifuImageButton9.Margin = new System.Windows.Forms.Padding(1);
             this.bunifuImageButton9.Name = "bunifuImageButton9";
             this.bunifuImageButton9.Size = new System.Drawing.Size(37, 34);
             this.bunifuImageButton9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -292,7 +293,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.Label1);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "Dashboard";
             this.Size = new System.Drawing.Size(711, 641);
             this.Load += new System.EventHandler(this.Dashboard_Load);

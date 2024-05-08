@@ -14,13 +14,23 @@ namespace GYHandMade.UserControls
     public partial class Dashboard : UserControl
     {   internal User user=null;
 
-        public Dashboard()
+        internal Dashboard(User user)
         {
             InitializeComponent();
-            user = userDB.GetUserById(9);
-            expenses.Text ="$ "+ user.TotalExpenses().ToString();
-            incomes.Text= "$ " + user.getTotalIncomes().ToString();
-            transactions.Text=user.GetAccountBalance().ToString();
+            this.user = user;
+            remplir();
+        }
+
+        internal void  remplir()
+        {
+            
+            expenses.Text = "$ " + user.TotalExpenses().ToString();
+            incomes.Text = "$ " + user.getTotalIncomes().ToString();
+            transactions.Text = user.GetAccountBalance().ToString();
+        }
+        internal Dashboard()
+        {
+            
         }
         internal void setUser(User use)
         {
@@ -34,6 +44,11 @@ namespace GYHandMade.UserControls
         }
 
         private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
