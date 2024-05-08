@@ -47,7 +47,7 @@ namespace GYHandMade.UserControls
 
             // Set properties of the UHistory control based on the provided history item
 
-            Typep = "revenue";
+            Typep = historyItem.Type;
             
             Description = historyItem.Description;
             Date = historyItem.Date;
@@ -57,7 +57,7 @@ namespace GYHandMade.UserControls
             
 
             // Set the text color based on the type
-            if (Typep == "revenue")
+            if (Typep == "revenu")
             {
                 labelType.ForeColor = Color.Green;
             }
