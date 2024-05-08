@@ -26,7 +26,62 @@ namespace GYProject.Classes.userAll
 
         public userDB(){}
         //SS
+        public static decimal GetSolde(int idUser, string accountName)
+        {
+            decimal solde = 0;
 
+            try
+            {
+                string query = $"SELECT Solde FROM Compte WHERE idUser = {idUser} AND Nom = '{accountName}'";
+                object result = DatabaseManager.Instance.ExecuteScalar(query);
+
+                if (result != null && result != DBNull.Value)
+                {
+                    solde = Convert.ToDecimal(result);
+                }
+                else
+                {
+                    Console.WriteLine("Aucun solde trouvé pour le compte spécifié.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur lors de la récupération du solde : {ex.Message}");
+            }
+
+            return solde;
+        }
+
+        public static void TransferAmoun(int idUser, string sourceAccount, string destinationAccount, decimal amount)
+        {
+            try
+            {
+                // Vérifier le solde du compte source
+                decimal sourceBalance = userDB.GetSolde(idUser, sourceAccount);
+
+                if (sourceBalance >= amount)
+                {
+                    // Déduire le montant du compte source
+                    string debitQuery = $"UPDATE Compte SET Solde = Solde - {amount} WHERE idUser = {idUser} AND Nom = '{sourceAccount}'";
+                    DatabaseManager.Instance.ExecuteNonQuery(debitQuery);
+
+                    // Ajouter le montant au compte destinataire
+                    string creditQuery = $"UPDATE Compte SET Solde = Solde + {amount} WHERE idUser = {idUser} AND Nom = '{destinationAccount}'";
+                    DatabaseManager.Instance.ExecuteNonQuery(creditQuery);
+
+                    Console.WriteLine($"Transfert de {amount} effectué avec succès du compte {sourceAccount} au compte {destinationAccount}.");
+                }
+                else
+                {
+                    // Afficher un message si le solde du compte source est insuffisant
+                    MessageBox.Show("Solde insuffisant dans le compte source pour effectuer le transfert.", "Erreur de transfert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur lors du transfert de montant : {ex.Message}");
+            }
+        }
 
         // Méthode pour insérer un utilisateur avec une image dans la base de données
         public static void InsertUserWithImage(string nom, string prenom, byte[] photoBytes, byte[] imagBytes)
@@ -93,6 +148,35 @@ namespace GYProject.Classes.userAll
 
 
         /******************* operation de user ***********************/
+
+
+        public static decimal GetSold(int idUser, string nameofcompte)
+        {
+            decimal solde = 0;
+
+            try
+            {
+                string query = $"SELECT Solde FROM Compte WHERE idUser = {idUser} AND Nom = '{nameofcompte}'";
+
+                DataTable dataTable = DatabaseManager.Instance.ExecuteQuery(query);
+
+                if (dataTable.Rows.Count > 0)
+                {
+                    solde = Convert.ToDecimal(dataTable.Rows[0]["Solde"]);
+                }
+                else
+                {
+                    Console.WriteLine("Aucun compte correspondant n'a été trouvé.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur lors de la récupération du solde : {ex.Message}");
+            }
+
+            return solde;
+        }
+
 
         internal static int AddUserWithComptes(User user, Compte compte1, Compte compte2)
         {

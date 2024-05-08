@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GYProject.Classes.userAll;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -13,6 +14,7 @@ namespace GYHandMade.UserControls
         UserControls.Mo1 Umo1 = new UserControls.Mo1();
         UserControls.Moz1 Umon1 = new UserControls.Moz1();
         UserControls.Transfer1 Ut1 = new UserControls.Transfer1();
+        internal User user=null;
 
         //PictureBox pictureBoxOverlay = new PictureBox(); // PictureBox for the semi-transparent overlay
 
@@ -21,8 +23,16 @@ namespace GYHandMade.UserControls
             InitializeComponent();
             panel4.Visible = false; // Initially hide panel4
             //panel5.Visible = false; // Initially hide panel5
+            user = userDB.GetUserById(3015);
 
-            
+            remplirLabels();
+
+        }
+
+        public void remplirLabels()
+        {
+            label10.Text = user.GetSolde("Banc").ToString();
+            label12.Text = user.GetSolde("Espece").ToString();
         }
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
@@ -56,6 +66,8 @@ namespace GYHandMade.UserControls
 
             // Add the dashboard user control to panel4
             panel4.Controls.Add(Umo);
+            Umo.envoyer(user,this);
+            
             Umo.Dock = DockStyle.Fill;
         }
 
@@ -68,13 +80,13 @@ namespace GYHandMade.UserControls
         {
             panel4.Visible = true;
             panel4.BringToFront();
-
             // Clear existing controls from panel4
             panel4.Controls.Clear();
-
             // Add the dashboard user control to panel4
             panel4.Controls.Add(Umon);
+            Umon.envoyer(user, this);
             Umon.Dock = DockStyle.Fill;
+
         }
 
         private void bunifuImageButton9_Click(object sender, EventArgs e)
@@ -87,6 +99,7 @@ namespace GYHandMade.UserControls
 
             // Add the dashboard user control to panel4
             panel4.Controls.Add(Ut);
+            Ut.envoyer(user, this);
             Ut.Dock = DockStyle.Fill;
         }
 
@@ -105,6 +118,7 @@ namespace GYHandMade.UserControls
 
             // Add the dashboard user control to panel4
             panel4.Controls.Add(Ut1);
+            Ut1.envoyer(user, this);
             Ut1.Dock = DockStyle.Fill;
         }
 
@@ -118,6 +132,7 @@ namespace GYHandMade.UserControls
 
             // Add the dashboard user control to panel4
             panel4.Controls.Add(Umo1);
+            Umo1.envoyer(user, this);
             Umo1.Dock = DockStyle.Fill;
         }
 
@@ -131,7 +146,13 @@ namespace GYHandMade.UserControls
 
             // Add the dashboard user control to panel4
             panel4.Controls.Add(Umon1);
+            Umon1.envoyer(user, this);
+
             Umon1.Dock = DockStyle.Fill;
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
         }
     }
 }

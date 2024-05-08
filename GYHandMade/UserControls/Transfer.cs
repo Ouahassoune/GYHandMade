@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GYProject.Classes.userAll;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,9 @@ namespace GYHandMade.UserControls
 {
     public partial class Transfer : UserControl
     {
+        internal User user = null;
+        internal String nameOfCompte = "Espece";
+        internal AddCompte cmp = null;
         public Transfer()
         {
             InitializeComponent();
@@ -25,6 +29,24 @@ namespace GYHandMade.UserControls
         private void closebutton_Click(object sender, EventArgs e)
         {
             this.Parent.Hide();
+        }
+
+        private void Transfer_Load(object sender, EventArgs e)
+        {
+
+        }
+        internal void envoyer(User user, AddCompte addCompte)
+        {
+            this.user = user;
+            this.cmp = addCompte;
+        }
+
+        private void guna2GradientTileButton1_Click(object sender, EventArgs e)
+        {
+            decimal amount = decimal.Parse(inputTextBox.Text);
+            user.TransferAmount("Banc", "Espece", amount);
+            inputTextBox.Text = "";
+            cmp.remplirLabels();
         }
     }
 }
