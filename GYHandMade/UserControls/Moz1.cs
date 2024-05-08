@@ -39,9 +39,10 @@ namespace GYHandMade.UserControls
         }
       
 
-        private void guna2GradientTileButton1_Click(object sender, EventArgs e)
-        {
+      
 
+        private void guna2GradientTileButton1_Click_1(object sender, EventArgs e)
+        {
             String str = inputTextBox.Text;
             decimal amount = decimal.Parse(inputTextBox.Text);
             user.RemoveFromCompte(nameOfCompte, amount);

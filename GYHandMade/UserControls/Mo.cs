@@ -54,14 +54,16 @@ namespace GYHandMade.UserControls
             cmp.remplirLabels();
 
         }
-        private void tfo3laAfaf(object sender, EventArgs e)
-        {
+       
 
+        private void guna2GradientTileButton1_Click_1(object sender, EventArgs e)
+        {
             String str = inputTextBox.Text;
             decimal amount = decimal.Parse(inputTextBox.Text);
-            user.RemoveFromCompte(nameOfCompte, amount);
+            user.AddToCompte(nameOfCompte, amount);
             inputTextBox.Text = "";
-        }
+            cmp.remplirLabels();
 
+        }
     }
 }

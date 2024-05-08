@@ -42,20 +42,20 @@ namespace GYHandMade.UserControls
 
         }
 
-        private void guna2GradientTileButton1_Click(object sender, EventArgs e)
+       
+
+        private void Mo1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2GradientTileButton1_Click_1(object sender, EventArgs e)
+        {
             String str = inputTextBox.Text;
             decimal amount = decimal.Parse(inputTextBox.Text);
             user.AddToCompte(nameOfCompte, amount);
             inputTextBox.Text = "";
             cmp.remplirLabels();
-
-        }
-
-        private void Mo1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

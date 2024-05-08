@@ -57,6 +57,7 @@
             this.guna2GradientTileButton1.Size = new System.Drawing.Size(439, 93);
             this.guna2GradientTileButton1.TabIndex = 59;
             this.guna2GradientTileButton1.Text = "Transfert";
+            this.guna2GradientTileButton1.Click += new System.EventHandler(this.guna2GradientTileButton1_Click_1);
             // 
             // Label1
             // 

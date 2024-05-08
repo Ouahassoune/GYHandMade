@@ -21,7 +21,8 @@ namespace GYHandMade
    
         UserControls.ToHistory UHistory = new UserControls.ToHistory();
         UserControls.AddCompte UCompte = new UserControls.AddCompte();
-      
+        Financial UFin = new Financial();
+
         public Form1()
         {
             InitializeComponent();
@@ -125,6 +126,15 @@ namespace GYHandMade
             // Add the dashboard user control to the form
             MainPanel.Controls.Add(UCompte);
             UCompte.Dock = DockStyle.Fill;
+        }
+
+        private void bunifuImageButton6_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+
+            // Add the dashboard user control to the form
+            MainPanel.Controls.Add(UFin);
+            UFin.Dock = DockStyle.Fill;
         }
     }
 }

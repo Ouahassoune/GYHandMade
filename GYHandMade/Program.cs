@@ -22,14 +22,14 @@ namespace GYHandMade
 
            
 
-            /* User us = userDB.GetUserById(9);
-
-              List<Transaction> transactions = us.AllTransaction();
-              foreach (Transaction transaction in transactions)
-              {
-                 Console.WriteLine($" dans le main ID: {transaction.ID}, type: {transaction.Type},Description: {transaction.Description}, Montant: {transaction.Montant}, Date: {transaction.Date}");
-              }
-              */
+             User us = userDB.GetUserById(9);
+            us.AddUser();
+            /*List<Transaction> transactions = us.AllTransaction();
+            foreach (Transaction transaction in transactions)
+            {
+               Console.WriteLine($" dans le main ID: {transaction.ID}, type: {transaction.Type},Description: {transaction.Description}, Montant: {transaction.Montant}, Date: {transaction.Date}");
+            }
+            */
             SetProcessDPIAware();
               Application.EnableVisualStyles();
               Application.SetCompatibleTextRenderingDefault(false);
