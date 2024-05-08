@@ -21,7 +21,7 @@ namespace GYHandMade.UserControls
         
 
         UserControls.UHistory UHistory = new UserControls.UHistory();
-        UserControls.Rp URp = new UserControls.Rp();
+        //UserControls.Rp URp = new UserControls.Rp();
         public ToHistory()
         {
           
@@ -30,7 +30,11 @@ namespace GYHandMade.UserControls
             UHistory.Dock = DockStyle.Fill;
             LoadHistoryItemsFromDatabase();
         }
+        internal void setUser(User use)
+        {
+            this.user = use;
 
+        }
         private void ToHistory_Load(object sender, EventArgs e)
         {
 
@@ -84,11 +88,11 @@ namespace GYHandMade.UserControls
         }
 
         private void pictureBox_Click(object sender, EventArgs e)
-        {  
-            panel1.Controls.Clear();
+        {
+          /*  panel1.Controls.Clear();
             panel2.Visible = false;
             panel1.Controls.Add(URp);
-            URp.Dock = DockStyle.Fill;
+            URp.Dock = DockStyle.Fill;*/
             
 
 

@@ -26,6 +26,11 @@ namespace GYHandMade.UserControls
             this.user = user;
             this.cmp = addCompte;
     }
+        internal void setUser(User use)
+        {
+            this.user = use;
+
+        }
 
         private void closebutton_Click(object sender, EventArgs e)
         {
@@ -63,5 +68,9 @@ namespace GYHandMade.UserControls
             inputTextBox.Text = "";
         }
 
+        private void Mo_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

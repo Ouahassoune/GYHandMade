@@ -28,6 +28,11 @@ namespace GYHandMade.UserControls
             remplirLabels();
 
         }
+        internal void setUser(User use)
+        {
+            this.user = use;
+
+        }
 
         public void remplirLabels()
         {

@@ -30,7 +30,11 @@ namespace GYHandMade.UserControls
         {
             this.user = user;
         }
+        internal void setUser(User use)
+        {
+            this.user = use;
 
+        }
         private void inputTextBox_TextChanged(object sender, EventArgs e)
         {
 
@@ -54,6 +58,11 @@ namespace GYHandMade.UserControls
         }
 
         private void Mo1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Mo1_Load_1(object sender, EventArgs e)
         {
 
         }

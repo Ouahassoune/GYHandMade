@@ -24,6 +24,11 @@ namespace GYHandMade.UserControls
             pictureBoxCategory2.Click += PictureBoxCategory_Click;
             // Add more PictureBoxes and subscribe to their Click events as needed
         }
+        internal void setUser(User use)
+        {
+            this.user = use;
+
+        }
 
         private void guna2GradientTileButton1_Click(object sender, EventArgs e)
         {

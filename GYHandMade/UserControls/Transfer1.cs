@@ -20,6 +20,11 @@ namespace GYHandMade.UserControls
         {
             InitializeComponent();
         }
+        internal void setUser(User use)
+        {
+            this.user = use;
+
+        }
         internal void envoyer(User user, AddCompte addCompte)
         {
             this.user = user;
@@ -42,6 +47,11 @@ namespace GYHandMade.UserControls
             user.TransferAmount("Espece", "Banc", amount);
             inputTextBox.Text = "";
             cmp.remplirLabels();
+        }
+
+        private void Transfer1_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

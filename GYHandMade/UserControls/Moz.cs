@@ -21,6 +21,11 @@ namespace GYHandMade.UserControls
         {
             InitializeComponent();
         }
+        internal void setUser(User use)
+        {
+            this.user = use;
+
+        }
         internal void envoyer(User user, AddCompte addCompte)
         {
             this.user = user;
@@ -51,6 +56,11 @@ namespace GYHandMade.UserControls
             user.RemoveFromCompte(nameOfCompte, amount);
             inputTextBox.Text = "";
             cmp.remplirLabels();
+
+        }
+
+        private void Moz_Load_1(object sender, EventArgs e)
+        {
 
         }
     }

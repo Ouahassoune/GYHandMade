@@ -22,6 +22,11 @@ namespace GYHandMade.UserControls
             incomes.Text= "$ " + user.getTotalIncomes().ToString();
             transactions.Text=user.GetAccountBalance().ToString();
         }
+        internal void setUser(User use)
+        {
+            this.user = use;
+
+        }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
