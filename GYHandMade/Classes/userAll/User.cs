@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using Microsoft.VisualBasic.ApplicationServices;
+using GYHandMade.Classes.Goals;
+using System.Data;
 
 namespace GYProject.Classes.userAll
 {
@@ -157,11 +159,23 @@ namespace GYProject.Classes.userAll
 
 
 
+        // *********************Goalss **************//
 
+        public void AddAmountToGoals(int idGoal, decimal montant, string nameOfCompte)
+        {
+            Goal.AddAmountToGoals(idGoal, montant, this.id,  nameOfCompte);
 
+        }
 
+        public void AddGoall(Goal goal)
+        {
+            Goal.AddGoal(goal, this.id);
 
-
+        }
+        public   List<Goal> GetAllGoals()
+        {
+            return Goal.GetAllGoalsByUserId(this.id);
+        }
 
 
 

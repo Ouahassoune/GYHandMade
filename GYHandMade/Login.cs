@@ -43,6 +43,7 @@ namespace GYHandMade
                 UCompte.setUser(user);
                 UAddTransaction.setUser(user);
                 UCompte.remplirLabels();
+                UHistory.setUser(user);   
                 UHistory.LoadHistoryItemsFromDatabase();
                 Form1 form1 = new Form1(user,Udashboard,  UHistory , UCompte,  UAddTransaction);
 

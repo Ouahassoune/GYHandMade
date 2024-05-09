@@ -25,7 +25,7 @@ namespace GYProject.Classes.userAll
         private static int userId;
 
         public userDB(){}
-        //SS
+       
         public static decimal GetSolde(int idUser, string accountName)
         {
             decimal solde = 0;

@@ -117,9 +117,9 @@ namespace GYProject.Classes.CompteAll
             return comptes;
         }
 
-        //ajouter montant au compte
+ 
 
-        internal static void RemoveAmountFromAccount(int userId, string accountName, decimal montant)
+       internal static void RemoveAmountFromAccount(int userId, string accountName, decimal montant)
         {
             try
             {
@@ -151,7 +151,7 @@ namespace GYProject.Classes.CompteAll
                 Console.WriteLine("Erreur lors du retrait du montant du compte : " + ex.Message);
             }
         }
-
+       
         internal static void AddAmountToAccount(int userId, string accountName, decimal montant)
         {
             try

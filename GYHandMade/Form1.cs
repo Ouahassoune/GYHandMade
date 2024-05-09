@@ -30,7 +30,7 @@ namespace GYHandMade
             // Définir l'utilisateur avant de créer le Dashboard UserControl
             this.user = use;
             this.Udashboard = uds;
-            UAddTransaction = UAddTransaction;
+            this.UAddTransaction = UAddTransaction;
             this.UCompte = ompte;
             
             this.UAddTransaction = UAddTransaction;
