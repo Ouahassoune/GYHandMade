@@ -158,5 +158,10 @@ namespace GYHandMade.UserControls
         private void label10_Click(object sender, EventArgs e)
         {
         }
+
+        private void AddCompte_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

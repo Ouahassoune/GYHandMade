@@ -43,7 +43,7 @@ namespace GYHandMade.UserControls
             string description = desc.Text;
             string category = "category";
             Transaction tr = new Transaction(description,montant,"revenu",dateSelectionnee,category);
-            user.AjouterTransaction(tr);
+            user.EffectuerTransaction(tr,"depense");
 
         }
 
@@ -58,7 +58,7 @@ namespace GYHandMade.UserControls
             {
                 // Add the transaction using the selected category
                 Transaction tr = new Transaction(description, montant, "revenu", dateSelectionnee, selectedCategory);
-                user.AjouterTransaction(tr);
+                user.EffectuerTransaction(tr,"Banc");
             }
             else
             {

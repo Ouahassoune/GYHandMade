@@ -230,8 +230,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="bin\Debug\Report1.rdlc" />
-    <EmbeddedResource Include="bin\Debug\Report2.rdlc" />
     <EmbeddedResource Include="Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
@@ -279,6 +277,8 @@
     <EmbeddedResource Include="UserControls\UHistory.resx">
       <DependentUpon>UHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Debug\Report1.rdlc" />
+    <None Include="bin\Debug\Report2.rdlc" />
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>

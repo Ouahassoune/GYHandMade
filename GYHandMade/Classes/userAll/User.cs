@@ -117,14 +117,14 @@ namespace GYProject.Classes.userAll
 
 
         //ajouter transaction a ce user
-        public void AjouterTransaction(Transaction transaction)
+       /* public void AjouterTransaction(Transaction transaction)
         {
             TransactionDB.AddTransaction(transaction, this.id);
-        }
-        public  void EffectuerTransaction(Transaction transaction, Compte compte)
+        }*/
+        public  void EffectuerTransaction(Transaction transaction, string comptename)
         {
             TransactionDB.AddTransaction(transaction, this.id);            // Appeler la méthode correspondante dans userDB
-            userDB.EffectuerTransaction(transaction, compte);
+            userDB.EffectuerTransaction(transaction, comptename, this.id);
         }
 
 

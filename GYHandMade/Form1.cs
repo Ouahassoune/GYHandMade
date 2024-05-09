@@ -19,22 +19,26 @@ namespace GYHandMade
 
         UserControls.AddTransaction UAddTransaction = new UserControls.AddTransaction();
         internal  UserControls.Dashboard Udashboard = new UserControls.Dashboard();
-        UserControls.ToHistory UHistory = new UserControls.ToHistory();
-        UserControls.AddCompte UCompte = new UserControls.AddCompte();
+        internal UserControls.ToHistory UHistory = new UserControls.ToHistory();
+        public UserControls.AddCompte UCompte = new UserControls.AddCompte();
         internal User user = new User();
 
-        internal Form1(User use,Dashboard uds)
+        internal Form1(User use,Dashboard uds, ToHistory UHistory, AddCompte ompte, AddTransaction UAddTransaction)
         {
             InitializeComponent();
 
             // Définir l'utilisateur avant de créer le Dashboard UserControl
             this.user = use;
             this.Udashboard = uds;
-
+            UAddTransaction = UAddTransaction;
+            this.UCompte = ompte;
+            
+            this.UAddTransaction = UAddTransaction;
+            this.UHistory = UHistory;
             // Créer une instance de Dashboard UserControl
 
             // Passer l'utilisateur au Dashboard UserControl
-            
+
             // Ajouter le Dashboard UserControl au formulaire principal
             MainPanel.Controls.Add(Udashboard);
             Udashboard.Dock = DockStyle.Fill;

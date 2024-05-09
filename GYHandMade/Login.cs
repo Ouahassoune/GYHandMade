@@ -1,4 +1,6 @@
-﻿using GYProject.Classes.userAll;
+﻿using GYHandMade.UserControls;
+using GYProject.Classes.CompteAll;
+using GYProject.Classes.userAll;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,8 +33,18 @@ namespace GYHandMade
                 if (user != null)
                 {
                 UserControls.Dashboard Udashboard = new UserControls.Dashboard(user);
+                UserControls.AddTransaction UAddTransaction = new UserControls.AddTransaction();
+         UserControls.ToHistory UHistory = new UserControls.ToHistory();
+         UserControls.AddCompte UCompte = new UserControls.AddCompte();
+
+
                 Udashboard.remplir();
-                Form1 form1 = new Form1(user, Udashboard);
+                UHistory.setUser(user);
+                UCompte.setUser(user);
+                UAddTransaction.setUser(user);
+                UCompte.remplirLabels();
+                UHistory.LoadHistoryItemsFromDatabase();
+                Form1 form1 = new Form1(user,Udashboard,  UHistory , UCompte,  UAddTransaction);
 
 
                 // Afficher la nouvelle fenêtre
