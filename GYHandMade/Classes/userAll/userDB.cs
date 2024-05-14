@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using GYHandMade;
 using GYProject.Classes.CompteAll;
 using GYProject.Classes.userAll;
 using GYProject.Database;
@@ -664,6 +665,47 @@ namespace GYProject.Classes.userAll
             {
                 Console.WriteLine("Erreur lors de l'effectuation de la transaction : " + ex.Message);
             }
+        }
+
+        internal static List<Goal> AllGoals(int userId)
+        {
+            List<Goal> goals = new List<Goal>();
+
+            try
+            {
+                // SQL query to select all goals for the given user
+                string query = "SELECT GoalId, GoalName, GoalCategory, GoalBudget, Amount, GoalDate, GoalCompleted " +
+                               "FROM Goal " +
+                               "WHERE UserId = @UserId";
+
+                // Parameters for the SQL query
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("@UserId", userId);
+
+                // Execute the query and retrieve the results
+                DataTable dataTable = GYProject.Database.DatabaseManager.Instance.ExecuteQuery3(query, parameters);
+
+                // Process the results and populate the list of goals
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    Goal goal = new Goal(
+                        Convert.ToInt32(row["GoalId"]), // Populate GoalId
+                        row["GoalName"].ToString(),
+                        row["GoalCategory"].ToString(),
+                        Convert.ToDecimal(row["GoalBudget"]),
+                        Convert.ToDecimal(row["Amount"]),
+                        Convert.ToDateTime(row["GoalDate"]),
+                        Convert.ToBoolean(row["GoalCompleted"])
+                    );
+                    goals.Add(goal);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error goal: " + ex.Message);
+            }
+
+            return goals;
         }
 
 

@@ -62,6 +62,10 @@ namespace GYHandMade
                 }
             }
 
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
+    }
     
 }

@@ -45,7 +45,9 @@ namespace GYHandMade.UserControls
             this.cmp = addCompte;
         }
 
-        private void guna2GradientTileButton1_Click(object sender, EventArgs e)
+        
+
+        private void guna2GradientTileButton1_Click_1(object sender, EventArgs e)
         {
             decimal amount = decimal.Parse(inputTextBox.Text);
             user.TransferAmount("Banc", "Espece", amount);

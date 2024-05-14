@@ -12,8 +12,10 @@ using System.Windows.Forms;
 namespace GYHandMade.UserControls
 {
     public partial class AddTransaction : UserControl
+
     {
         internal User user = null;
+
         UserControls.AddIncome UAddIncome = new UserControls.AddIncome();
         UserControls.AddExpense UAddExpense = new UserControls.AddExpense();
         public AddTransaction()

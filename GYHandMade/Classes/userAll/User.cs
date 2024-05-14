@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using Microsoft.VisualBasic.ApplicationServices;
-using GYHandMade.Classes.Goals;
-using System.Data;
+using GYHandMade;
+
 
 namespace GYProject.Classes.userAll
 {
@@ -65,6 +65,10 @@ namespace GYProject.Classes.userAll
         public List<Transaction> AllTransaction()
         {
             return userDB.ShowAllTransaction(this.id);
+        }
+        public List<Goal> AllGoal()
+        {
+            return userDB.AllGoals(this.id);
         }
 
 

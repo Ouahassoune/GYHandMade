@@ -16,12 +16,14 @@ using System.Windows.Forms;
 namespace GYHandMade.UserControls
 {
     public partial class ToHistory : UserControl
+
     { 
         User user = new User();
         
 
+
         UserControls.UHistory UHistory = new UserControls.UHistory();
-        //UserControls.Rp URp = new UserControls.Rp();
+        UserControls.Rp URp = new UserControls.Rp();
         public ToHistory()
         {
           
@@ -52,8 +54,10 @@ namespace GYHandMade.UserControls
         internal  void LoadHistoryItemsFromDatabase()
         {
             // Assuming you have a method to retrieve history items from the database
+
             if (user.AllTransaction()!=null)
             {
+
 
 
                 List<Transaction> historyItems = user.AllTransaction();
@@ -94,13 +98,24 @@ namespace GYHandMade.UserControls
 
         private void pictureBox_Click(object sender, EventArgs e)
         {
-          /*  panel1.Controls.Clear();
+            // Clear existing controls from panel1
+            panel1.Controls.Clear();
+
+            // Hide panel2
             panel2.Visible = false;
-            panel1.Controls.Add(URp);
-            URp.Dock = DockStyle.Fill;*/
-            
 
+            // Create an instance of the Rp UserControl
+            Rp rpControl = new Rp();
 
+            // Pass the user data to the Rp UserControl using the SetUser method
+            rpControl.SetUser(user);
+
+            // Add the Rp UserControl to panel1
+            panel1.Controls.Add(rpControl);
+
+            // Dock the Rp UserControl to fill the panel
+            rpControl.Dock = DockStyle.Fill;
         }
+
     }
 }

@@ -18,6 +18,7 @@ namespace GYHandMade
     {  
 
         UserControls.AddTransaction UAddTransaction = new UserControls.AddTransaction();
+
         internal  UserControls.Dashboard Udashboard = new UserControls.Dashboard();
         internal UserControls.ToHistory UHistory = new UserControls.ToHistory();
         public UserControls.AddCompte UCompte = new UserControls.AddCompte();
@@ -44,6 +45,7 @@ namespace GYHandMade
             Udashboard.Dock = DockStyle.Fill;
 
             label2.Text = "Hello, " + user.nom + "!";
+
             lastTransaction();
 
         }
@@ -95,7 +97,7 @@ namespace GYHandMade
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
@@ -138,6 +140,8 @@ namespace GYHandMade
         {
             // Clear existing controls from the form
             MainPanel.Controls.Clear();
+            UserControls.ToHistory UHistory = new UserControls.ToHistory();
+            UHistory.setUser(user);
 
             // Add the dashboard user control to the form
             MainPanel.Controls.Add(UHistory);
@@ -172,6 +176,20 @@ namespace GYHandMade
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuImageButton6_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            Financial UFin = new Financial();
+            // Add the dashboard user control to the form
+            MainPanel.Controls.Add(UFin);
+            UFin.Dock = DockStyle.Fill;
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

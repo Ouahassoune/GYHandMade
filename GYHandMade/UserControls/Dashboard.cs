@@ -12,11 +12,15 @@ using System.Windows.Forms;
 namespace GYHandMade.UserControls
 {
     public partial class Dashboard : UserControl
-    {   internal User user=null;
+    {
+        private Form fullScreenForm;
+        internal User user=null;
 
         internal Dashboard(User user)
         {
+           
             InitializeComponent();
+
             this.user = user;
             remplir();
         }
@@ -31,6 +35,7 @@ namespace GYHandMade.UserControls
         internal Dashboard()
         {
             
+
         }
         internal void setUser(User use)
         {
@@ -40,7 +45,7 @@ namespace GYHandMade.UserControls
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label19_Click(object sender, EventArgs e)

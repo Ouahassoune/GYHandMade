@@ -36,6 +36,9 @@
     <Reference Include="BlurWindow, Version=7.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\BlurWindow.7.0.1\lib\net45\BlurWindow.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
+      <HintPath>..\..\Downloads\Bunifu_UI_WinForms_5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
@@ -78,6 +81,7 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -95,7 +99,9 @@
   <ItemGroup>
     <Compile Include="Classes\CompteAll\Compte.cs" />
     <Compile Include="Classes\CompteAll\CompteDB.cs" />
-    <Compile Include="Classes\Goals\Goal.cs" />
+
+    <Compile Include="Classes\Goal\Goal.cs" />
+
     <Compile Include="Classes\TransactionAll\Transaction.cs" />
     <Compile Include="Classes\TransactionAll\TransactionDB.cs" />
     <Compile Include="Classes\userAll\User.cs" />
@@ -144,6 +150,18 @@
     <Compile Include="UserControls\AddExpense.Designer.cs">
       <DependentUpon>AddExpense.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\AddGoal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddGoal.Designer.cs">
+      <DependentUpon>AddGoal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddGoal2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddGoal2.Designer.cs">
+      <DependentUpon>AddGoal2.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\AddIncome.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -161,6 +179,12 @@
     </Compile>
     <Compile Include="UserControls\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Done.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Done.Designer.cs">
+      <DependentUpon>Done.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Mo.cs">
       <SubType>UserControl</SubType>
@@ -185,6 +209,12 @@
     </Compile>
     <Compile Include="UserControls\Moz1.Designer.cs">
       <DependentUpon>Moz1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Pending.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Pending.Designer.cs">
+      <DependentUpon>Pending.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Rp.cs">
       <SubType>UserControl</SubType>
@@ -246,6 +276,12 @@
     <EmbeddedResource Include="UserControls\AddExpense.resx">
       <DependentUpon>AddExpense.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AddGoal.resx">
+      <DependentUpon>AddGoal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AddGoal2.resx">
+      <DependentUpon>AddGoal2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\AddIncome.resx">
       <DependentUpon>AddIncome.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Done.resx">
+      <DependentUpon>Done.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Mo.resx">
       <DependentUpon>Mo.cs</DependentUpon>
@@ -266,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Moz1.resx">
       <DependentUpon>Moz1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Pending.resx">
+      <DependentUpon>Pending.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Rp.resx">
       <DependentUpon>Rp.cs</DependentUpon>
