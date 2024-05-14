@@ -13,9 +13,10 @@ using static System.Net.Mime.MediaTypeNames;
 namespace GYHandMade.UserControls
 {
     public partial class Mo : UserControl
-    {internal User user=null;
-       internal String nameOfCompte = "Banc";
-        internal AddCompte cmp =null;
+    {
+        internal User user = null;
+        internal String nameOfCompte = "Banc";
+        internal AddCompte cmp = null;
 
         public Mo()
         {
@@ -25,7 +26,7 @@ namespace GYHandMade.UserControls
         {
             this.user = user;
             this.cmp = addCompte;
-    }
+        }
         internal void setUser(User use)
         {
             this.user = use;
@@ -50,8 +51,8 @@ namespace GYHandMade.UserControls
 
         private void guna2GradientTileButton1_Click(object sender, EventArgs e)
         {
-           
-            String str = inputTextBox.Text;         
+
+            String str = inputTextBox.Text;
             decimal amount = decimal.Parse(inputTextBox.Text);
             user.AddToCompte(nameOfCompte, amount);
             inputTextBox.Text = "";
@@ -59,16 +60,26 @@ namespace GYHandMade.UserControls
             cmp.remplirLabels();
 
         }
-       
 
 
-        private void Mo_Load_1(object sender, EventArgs e)
-        {
+
+      
 
 
+            private void guna2GradientTileButton1_Click_1(object sender, EventArgs e)
+            {
+                String str = inputTextBox.Text;
+                decimal amount = decimal.Parse(inputTextBox.Text);
+                user.AddToCompte(nameOfCompte, amount);
+                inputTextBox.Text = "";
+                cmp.remplirLabels();
+
+
+            }
 
         private void guna2GradientTileButton1_Click_1(object sender, EventArgs e)
         {
+
             String str = inputTextBox.Text;
             decimal amount = decimal.Parse(inputTextBox.Text);
             user.AddToCompte(nameOfCompte, amount);
@@ -77,16 +88,4 @@ namespace GYHandMade.UserControls
 
 
         }
-
-        private void guna2GradientTileButton1_Click_1(object sender, EventArgs e)
-        {
-
-            String str = inputTextBox.Text;
-            decimal amount = decimal.Parse(inputTextBox.Text);
-            user.AddToCompte(nameOfCompte, amount);
-            inputTextBox.Text = "";
-            cmp.remplirLabels();
-
-        }
-    }
-}
+    } }
