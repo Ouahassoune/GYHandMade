@@ -1,3 +1,4 @@
+using GYHandMade.Classes.Goals;
 using GYProject.Classes;
 using GYProject.Classes.userAll;
 using System;
@@ -20,16 +21,18 @@ namespace GYHandMade
         {
 
 
-           
+            
 
-             User us = userDB.GetUserById(9);
-            //us.AddUser();
-            /*List<Transaction> transactions = us.AllTransaction();
-            foreach (Transaction transaction in transactions)
-            {
-               Console.WriteLine($" dans le main ID: {transaction.ID}, type: {transaction.Type},Description: {transaction.Description}, Montant: {transaction.Montant}, Date: {transaction.Date}");
-            }
-            */
+            /*DateTime date = DateTime.ParseExact("10/10/2026", "MM/dd/yyyy", null);
+
+            Goal goal = new Goal("goal2", "cat2", 2000, date);
+            User us = userDB.GetUserById(3016);
+            us.AddAmountToGoals(4, 100, "Espece");*/
+
+            //User user = new User("youssef", "youssef", "youssef", "youssef",null);
+            //user.AddUser();
+
+
             SetProcessDPIAware();
               Application.EnableVisualStyles();
               Application.SetCompatibleTextRenderingDefault(false);

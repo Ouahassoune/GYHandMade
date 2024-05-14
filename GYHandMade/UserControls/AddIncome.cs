@@ -20,7 +20,6 @@ namespace GYHandMade.UserControls
         public AddIncome()
         {
             InitializeComponent();
-            user = userDB.GetUserById(9);
         }
         internal void setUser(User use)
         {
@@ -44,7 +43,7 @@ namespace GYHandMade.UserControls
             string description = desc.Text;
             string category = "category";
             Transaction tr = new Transaction(description,montant,"revenu",dateSelectionnee,category);
-            user.AjouterTransaction(tr);
+            user.EffectuerTransaction(tr,"depense");
 
         }
 
@@ -53,16 +52,13 @@ namespace GYHandMade.UserControls
             decimal montant = decimal.Parse(amount.Text);
             DateTime dateSelectionnee = date.Value;
             string description = desc.Text;
-            
-            
-            
-
+     
             // Check if a category is selected
             if (!string.IsNullOrEmpty(selectedCategory))
             {
                 // Add the transaction using the selected category
                 Transaction tr = new Transaction(description, montant, "revenu", dateSelectionnee, selectedCategory);
-                user.AjouterTransaction(tr);
+                user.EffectuerTransaction(tr,"Banc");
             }
             else
             {

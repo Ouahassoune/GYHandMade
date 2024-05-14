@@ -12,12 +12,16 @@ using System.Windows.Forms;
 namespace GYHandMade.UserControls
 {
     public partial class AddTransaction : UserControl
-    { User user = new User();
+
+    {
+        internal User user = null;
+
         UserControls.AddIncome UAddIncome = new UserControls.AddIncome();
         UserControls.AddExpense UAddExpense = new UserControls.AddExpense();
         public AddTransaction()
         {
             InitializeComponent();
+            UAddIncome.setUser(user);
             panel2.Controls.Add(UAddIncome);
             UAddIncome.Dock = DockStyle.Fill;
 
@@ -52,7 +56,7 @@ namespace GYHandMade.UserControls
         {
             // Clear existing controls from the form
             panel2.Controls.Clear();
-
+            UAddExpense.addUser(user);
             // Add the dashboard user control to the form
             panel2.Controls.Add(UAddExpense);
             UAddExpense.Dock = DockStyle.Fill;
@@ -67,5 +71,12 @@ namespace GYHandMade.UserControls
         {
 
         }
+
+        private void AddTransaction_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

@@ -26,7 +26,7 @@ namespace GYProject.Classes.userAll
         private static int userId;
 
         public userDB(){}
-        //SS
+       
         public static decimal GetSolde(int idUser, string accountName)
         {
             decimal solde = 0;
@@ -472,8 +472,8 @@ namespace GYProject.Classes.userAll
             try
             {
                 // Construction de la requête SQL pour calculer la somme des dépenses de l'utilisateur
-                string query = $"SELECT SUM(Montant) AS Total FROM transactions " +
-                               $"WHERE idUser = {userId} AND Type = 'revenu'";
+                string query = $"SELECT SUM(Solde) AS Total FROM Compte " +
+                               $"WHERE idUser = {userId} ";
 
                 // Exécution de la requête à l'aide de la classe DatabaseManager et récupération du résultat
                 DataTable dataTable = DatabaseManager.Instance.ExecuteQuery(query);
@@ -611,28 +611,54 @@ namespace GYProject.Classes.userAll
             return comptes;
         }
 
-      
 
-        internal static void EffectuerTransaction(Transaction transaction, Compte compte)
+
+        internal static void EffectuerTransaction(Transaction transaction, string nameOfCompte, int idUser)
         {
             try
             {
-                // Vérifier le type de transaction
-                if (transaction.Type == "depense")
+                // Récupérer l'ID du compte correspondant au nom du compte et à l'ID de l'utilisateur
+                string queryGetCompteId = $"SELECT ID, Solde FROM Compte WHERE Nom = '{nameOfCompte}' AND idUser = {idUser}";
+                object[] result = (object[])DatabaseManager.Instance.ExecuteRow(queryGetCompteId);
+
+                if (result != null && result.Length >= 2)
                 {
-                    // Mettre à jour le solde pour une dépense
-                    string query = $"UPDATE Compte SET Solde = Solde - {transaction.Montant} WHERE ID = {compte.ID}";
-                    DatabaseManager.Instance.ExecuteNonQuery(query);
-                }
-                else if (transaction.Type == "revenu")
-                {
-                    // Mettre à jour le solde pour un revenu
-                    string query = $"UPDATE Compte SET Solde = Solde + {transaction.Montant} WHERE ID = {compte.ID}";
-                    DatabaseManager.Instance.ExecuteNonQuery(query);
+                    int compteId = (int)result[0];
+                    double solde = Convert.ToDouble(result[1]);
+
+                    // Vérifier le type de transaction
+                    if (transaction.Type == "depense")
+                    {
+                        decimal soldeDecimal = Convert.ToDecimal(solde);
+
+                        // Vérifier si le solde est suffisant pour la dépense
+                        if (soldeDecimal >= transaction.Montant)
+                        {
+                            // Mettre à jour le solde pour une dépense
+                            string queryDepense = $"UPDATE Compte SET Solde = Solde - {transaction.Montant} WHERE ID = {compteId}";
+                            DatabaseManager.Instance.ExecuteNonQuery(queryDepense);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Solde insuffisant  pour effectuer cette dépense", "Erreur de transfert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                            // Vous pouvez afficher un message ici ou prendre une autre action appropriée
+                        }
+                    }
+                    else if (transaction.Type == "revenu")
+                    {
+                        // Mettre à jour le solde pour un revenu
+                        string queryRevenu = $"UPDATE Compte SET Solde = Solde + {transaction.Montant} WHERE ID = {compteId}";
+                        DatabaseManager.Instance.ExecuteNonQuery(queryRevenu);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Type de transaction invalide.");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Type de transaction invalide.");
+                    Console.WriteLine("Compte non trouvé.");
                 }
             }
             catch (Exception ex)

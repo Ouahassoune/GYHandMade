@@ -19,7 +19,9 @@ namespace GYHandMade.UserControls
 {
     public partial class Rp : UserControl
     {
-        private User user;
+
+        internal User user = null;
+
 
         public Rp()
         {

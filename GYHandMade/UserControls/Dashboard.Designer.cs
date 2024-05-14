@@ -1,4 +1,4 @@
-﻿namespace GYHandMade.UserControls
+namespace GYHandMade.UserControls
 {
     partial class Dashboard
     {

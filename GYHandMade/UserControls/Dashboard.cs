@@ -16,29 +16,26 @@ namespace GYHandMade.UserControls
         private Form fullScreenForm;
         internal User user=null;
 
-        public Dashboard()
+        internal Dashboard(User user)
         {
            
             InitializeComponent();
-         //   InitializeFullScreenForm();
-            user = userDB.GetUserById(9);
-            expenses.Text ="$ "+ user.TotalExpenses().ToString();
-            incomes.Text= "$ " + user.getTotalIncomes().ToString();
-            transactions.Text=user.GetAccountBalance().ToString();
-            Console.WriteLine("Dashboard constructor executed.");
+
+            this.user = user;
+            remplir();
         }
 
-        private void InitializeFullScreenForm()
+        internal void  remplir()
         {
-            // Set form properties for full screen mode
-            this.Dock = DockStyle.Fill;
+            
+            expenses.Text = "$ " + user.TotalExpenses().ToString();
+            incomes.Text = "$ " + user.getTotalIncomes().ToString();
+            transactions.Text = user.GetAccountBalance().ToString();
+        }
+        internal Dashboard()
+        {
+            
 
-            Form parentForm = this.FindForm();
-            if (parentForm != null)
-            {
-                parentForm.FormBorderStyle = FormBorderStyle.None;
-                parentForm.WindowState = FormWindowState.Maximized;
-            }
         }
         internal void setUser(User use)
         {
@@ -52,6 +49,11 @@ namespace GYHandMade.UserControls
         }
 
         private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }

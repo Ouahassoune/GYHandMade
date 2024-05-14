@@ -18,7 +18,6 @@ namespace GYHandMade.UserControls
         public AddExpense()
         {
             InitializeComponent();
-            user = userDB.GetUserById(7);
             // Subscribe to click events of PictureBoxes
             pictureBoxCategory2.Click += PictureBoxCategory_Click;
             pictureBoxCategory2.Click += PictureBoxCategory_Click;
@@ -42,7 +41,7 @@ namespace GYHandMade.UserControls
             {
                 // Add the transaction using the selected category
                 Transaction tr = new Transaction(description, montant, "depense", dateSelectionnee, selectedCategory);
-                user.AjouterTransaction(tr);
+                user.EffectuerTransaction(tr, "Banc");
             }
             else
             {
@@ -63,7 +62,8 @@ namespace GYHandMade.UserControls
             {
                 // Add the transaction using the selected category
                 Transaction tr = new Transaction(description, montant, "depense", dateSelectionnee, selectedCategory);
-                user.AjouterTransaction(tr);
+                user.EffectuerTransaction(tr,"Banc");
+
             }
             else
             {
@@ -101,7 +101,8 @@ namespace GYHandMade.UserControls
             try
             {
                 // Load the circular border image from file
-                Image borderImage = Image.FromFile("D:/GYHandMade/GYHandMade/category/bb.png");
+
+                Image borderImage = Image.FromFile("C:\\Users\\Pc\\Desktop\\GI2_S4\\.Net\\8_youss\\GYHandMade\\category\\bb.png");
 
                 // Set the layout mode of the background image
                 clickedPictureBox.BackgroundImageLayout = BackgroundImageLayout;
@@ -138,6 +139,11 @@ namespace GYHandMade.UserControls
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        internal void addUser(User user)
+        {
+            this.user = user;
         }
     }
 }

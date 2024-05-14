@@ -14,7 +14,7 @@ namespace GYHandMade.UserControls
         UserControls.Mo1 Umo1 = new UserControls.Mo1();
         UserControls.Moz1 Umon1 = new UserControls.Moz1();
         UserControls.Transfer1 Ut1 = new UserControls.Transfer1();
-        internal User user=null;
+        internal User user=new User();
 
         //PictureBox pictureBoxOverlay = new PictureBox(); // PictureBox for the semi-transparent overlay
 
@@ -23,7 +23,6 @@ namespace GYHandMade.UserControls
             InitializeComponent();
             panel4.Visible = false; // Initially hide panel4
             //panel5.Visible = false; // Initially hide panel5
-            user = userDB.GetUserById(3015);
 
             remplirLabels();
 
@@ -158,6 +157,11 @@ namespace GYHandMade.UserControls
 
         private void label10_Click(object sender, EventArgs e)
         {
+        }
+
+        private void AddCompte_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

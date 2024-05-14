@@ -12,6 +12,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using Microsoft.VisualBasic.ApplicationServices;
 using GYHandMade;
 
+
 namespace GYProject.Classes.userAll
 {
     internal class User
@@ -99,6 +100,10 @@ namespace GYProject.Classes.userAll
         public decimal GetAccountBalance()
         {
             // Calculer le solde du compte (total des revenus - total des dépenses)
+            if(getTotalIncomes() - TotalExpenses() < 0)
+            {
+                MessageBox.Show("Add to your incomes to continue this transaction", "Erreur de transfert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             return getTotalIncomes() - TotalExpenses();
         }
 
@@ -118,14 +123,14 @@ namespace GYProject.Classes.userAll
 
 
         //ajouter transaction a ce user
-        public void AjouterTransaction(Transaction transaction)
+       /* public void AjouterTransaction(Transaction transaction)
         {
             TransactionDB.AddTransaction(transaction, this.id);
-        }
-        public  void EffectuerTransaction(Transaction transaction, Compte compte)
+        }*/
+        public  void EffectuerTransaction(Transaction transaction, string comptename)
         {
             TransactionDB.AddTransaction(transaction, this.id);            // Appeler la méthode correspondante dans userDB
-            userDB.EffectuerTransaction(transaction, compte);
+            userDB.EffectuerTransaction(transaction, comptename, this.id);
         }
 
 
@@ -158,11 +163,23 @@ namespace GYProject.Classes.userAll
 
 
 
+        // *********************Goalss **************//
 
+        public void AddAmountToGoals(int idGoal, decimal montant, string nameOfCompte)
+        {
+            Goal.AddAmountToGoals(idGoal, montant, this.id,  nameOfCompte);
 
+        }
 
+        public void AddGoall(Goal goal)
+        {
+            Goal.AddGoal(goal, this.id);
 
-
+        }
+        public   List<Goal> GetAllGoals()
+        {
+            return Goal.GetAllGoalsByUserId(this.id);
+        }
 
 
 
