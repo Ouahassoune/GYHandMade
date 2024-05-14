@@ -61,10 +61,10 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Location = new System.Drawing.Point(17, 224);
-            this.panel6.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel6.Location = new System.Drawing.Point(45, 534);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(366, 350);
+            this.panel6.Size = new System.Drawing.Size(976, 835);
             this.panel6.TabIndex = 36;
             // 
             // panel5
@@ -74,20 +74,19 @@
             this.panel5.Controls.Add(this.bunifuImageButton11);
             this.panel5.Controls.Add(this.label24);
             this.panel5.Controls.Add(this.label25);
-            this.panel5.Location = new System.Drawing.Point(462, 76);
-            this.panel5.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel5.Location = new System.Drawing.Point(1232, 181);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(182, 120);
+            this.panel5.Size = new System.Drawing.Size(485, 286);
             this.panel5.TabIndex = 35;
             // 
             // incomes
             // 
             this.incomes.AutoSize = true;
             this.incomes.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomes.Location = new System.Drawing.Point(51, 64);
-            this.incomes.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.incomes.Location = new System.Drawing.Point(136, 153);
             this.incomes.Name = "incomes";
-            this.incomes.Size = new System.Drawing.Size(108, 23);
+            this.incomes.Size = new System.Drawing.Size(258, 56);
             this.incomes.TabIndex = 27;
             this.incomes.Text = "$50,000,00";
             // 
@@ -96,10 +95,10 @@
             this.bunifuImageButton11.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton11.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton11.Image")));
             this.bunifuImageButton11.ImageActive = null;
-            this.bunifuImageButton11.Location = new System.Drawing.Point(6, 57);
-            this.bunifuImageButton11.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.bunifuImageButton11.Location = new System.Drawing.Point(16, 136);
+            this.bunifuImageButton11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bunifuImageButton11.Name = "bunifuImageButton11";
-            this.bunifuImageButton11.Size = new System.Drawing.Size(37, 34);
+            this.bunifuImageButton11.Size = new System.Drawing.Size(99, 81);
             this.bunifuImageButton11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton11.TabIndex = 8;
             this.bunifuImageButton11.TabStop = false;
@@ -110,10 +109,9 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label24.Location = new System.Drawing.Point(154, 11);
-            this.label24.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label24.Location = new System.Drawing.Point(411, 26);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(21, 19);
+            this.label24.Size = new System.Drawing.Size(53, 47);
             this.label24.TabIndex = 28;
             this.label24.Text = "...";
             // 
@@ -122,10 +120,9 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label25.Location = new System.Drawing.Point(7, 13);
-            this.label25.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label25.Location = new System.Drawing.Point(19, 31);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(97, 17);
+            this.label25.Size = new System.Drawing.Size(231, 40);
             this.label25.TabIndex = 27;
             this.label25.Text = "Total Income";
             // 
@@ -136,20 +133,19 @@
             this.panel4.Controls.Add(this.bunifuImageButton10);
             this.panel4.Controls.Add(this.label21);
             this.panel4.Controls.Add(this.label22);
-            this.panel4.Location = new System.Drawing.Point(236, 76);
-            this.panel4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel4.Location = new System.Drawing.Point(629, 181);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(182, 120);
+            this.panel4.Size = new System.Drawing.Size(485, 286);
             this.panel4.TabIndex = 34;
             // 
             // expenses
             // 
             this.expenses.AutoSize = true;
             this.expenses.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.expenses.Location = new System.Drawing.Point(51, 65);
-            this.expenses.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.expenses.Location = new System.Drawing.Point(136, 155);
             this.expenses.Name = "expenses";
-            this.expenses.Size = new System.Drawing.Size(108, 23);
+            this.expenses.Size = new System.Drawing.Size(258, 56);
             this.expenses.TabIndex = 27;
             this.expenses.Text = "$50,000,00";
             // 
@@ -158,10 +154,10 @@
             this.bunifuImageButton10.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton10.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton10.Image")));
             this.bunifuImageButton10.ImageActive = null;
-            this.bunifuImageButton10.Location = new System.Drawing.Point(6, 57);
-            this.bunifuImageButton10.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.bunifuImageButton10.Location = new System.Drawing.Point(16, 136);
+            this.bunifuImageButton10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bunifuImageButton10.Name = "bunifuImageButton10";
-            this.bunifuImageButton10.Size = new System.Drawing.Size(37, 34);
+            this.bunifuImageButton10.Size = new System.Drawing.Size(99, 81);
             this.bunifuImageButton10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton10.TabIndex = 8;
             this.bunifuImageButton10.TabStop = false;
@@ -172,10 +168,9 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label21.Location = new System.Drawing.Point(154, 11);
-            this.label21.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label21.Location = new System.Drawing.Point(411, 26);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(21, 19);
+            this.label21.Size = new System.Drawing.Size(53, 47);
             this.label21.TabIndex = 28;
             this.label21.Text = "...";
             // 
@@ -184,10 +179,9 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label22.Location = new System.Drawing.Point(7, 13);
-            this.label22.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label22.Location = new System.Drawing.Point(19, 31);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(106, 17);
+            this.label22.Size = new System.Drawing.Size(256, 40);
             this.label22.TabIndex = 27;
             this.label22.Text = "Total Expenses";
             // 
@@ -198,20 +192,19 @@
             this.panel3.Controls.Add(this.bunifuImageButton9);
             this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.label17);
-            this.panel3.Location = new System.Drawing.Point(17, 76);
-            this.panel3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel3.Location = new System.Drawing.Point(45, 181);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(182, 120);
+            this.panel3.Size = new System.Drawing.Size(485, 286);
             this.panel3.TabIndex = 33;
             // 
             // transactions
             // 
             this.transactions.AutoSize = true;
             this.transactions.Font = new System.Drawing.Font("Century Gothic", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transactions.Location = new System.Drawing.Point(51, 65);
-            this.transactions.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.transactions.Location = new System.Drawing.Point(136, 155);
             this.transactions.Name = "transactions";
-            this.transactions.Size = new System.Drawing.Size(108, 23);
+            this.transactions.Size = new System.Drawing.Size(258, 56);
             this.transactions.TabIndex = 27;
             this.transactions.Text = "$50,000,00";
             this.transactions.Click += new System.EventHandler(this.label19_Click);
@@ -221,10 +214,10 @@
             this.bunifuImageButton9.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton9.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton9.Image")));
             this.bunifuImageButton9.ImageActive = null;
-            this.bunifuImageButton9.Location = new System.Drawing.Point(6, 57);
-            this.bunifuImageButton9.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.bunifuImageButton9.Location = new System.Drawing.Point(16, 136);
+            this.bunifuImageButton9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bunifuImageButton9.Name = "bunifuImageButton9";
-            this.bunifuImageButton9.Size = new System.Drawing.Size(37, 34);
+            this.bunifuImageButton9.Size = new System.Drawing.Size(99, 81);
             this.bunifuImageButton9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton9.TabIndex = 8;
             this.bunifuImageButton9.TabStop = false;
@@ -235,10 +228,9 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label18.Location = new System.Drawing.Point(154, 11);
-            this.label18.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label18.Location = new System.Drawing.Point(411, 26);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(21, 19);
+            this.label18.Size = new System.Drawing.Size(53, 47);
             this.label18.TabIndex = 28;
             this.label18.Text = "...";
             // 
@@ -247,10 +239,9 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label17.Location = new System.Drawing.Point(7, 13);
-            this.label17.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label17.Location = new System.Drawing.Point(19, 31);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(100, 17);
+            this.label17.Size = new System.Drawing.Size(239, 40);
             this.label17.TabIndex = 27;
             this.label17.Text = "Total Balance";
             // 
@@ -259,10 +250,9 @@
             this.Label1.AutoSize = true;
             this.Label1.BackColor = System.Drawing.Color.Transparent;
             this.Label1.Font = new System.Drawing.Font("Century Gothic", 21.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1.Location = new System.Drawing.Point(12, 10);
-            this.Label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.Label1.Location = new System.Drawing.Point(32, 24);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(178, 37);
+            this.Label1.Size = new System.Drawing.Size(426, 85);
             this.Label1.TabIndex = 32;
             this.Label1.Text = "Dashboard";
             // 
@@ -283,18 +273,18 @@
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.IndianRed;
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.Label1);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Dashboard";
-            this.Size = new System.Drawing.Size(711, 641);
+            this.Size = new System.Drawing.Size(1895, 1528);
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();

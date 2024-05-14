@@ -55,9 +55,6 @@ namespace GYHandMade.UserControls
 
         }
 
-        private void guna2GradientTileButton1_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

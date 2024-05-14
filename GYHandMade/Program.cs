@@ -23,7 +23,7 @@ namespace GYHandMade
            
 
              User us = userDB.GetUserById(9);
-            us.AddUser();
+            //us.AddUser();
             /*List<Transaction> transactions = us.AllTransaction();
             foreach (Transaction transaction in transactions)
             {
@@ -33,7 +33,7 @@ namespace GYHandMade
             SetProcessDPIAware();
               Application.EnableVisualStyles();
               Application.SetCompatibleTextRenderingDefault(false);
-              Application.Run(new Login());
+              Application.Run(new       Login());
 
             //HII YOUSSEFFFFF
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GYProject.Classes.userAll;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 namespace GYHandMade.UserControls
 {
     public partial class AddTransaction : UserControl
-    {
+    { User user = new User();
         UserControls.AddIncome UAddIncome = new UserControls.AddIncome();
         UserControls.AddExpense UAddExpense = new UserControls.AddExpense();
         public AddTransaction()
