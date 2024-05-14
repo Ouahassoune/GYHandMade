@@ -180,6 +180,36 @@ namespace GYProject.Database
 
             return rowsAffected;
         }
+        public object[] ExecuteRow(string query)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    SqlCommand command = new SqlCommand(query, connection);
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        object[] row = new object[reader.FieldCount];
+                        reader.GetValues(row);
+                        Console.WriteLine("Success: Row fetched successfully.");
+                        return row;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: No rows found.");
+                        return null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return null;
+            }
+        }
 
     }
 }

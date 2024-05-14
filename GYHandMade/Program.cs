@@ -1,4 +1,3 @@
-using GYHandMade.Classes.Goals;
 using GYProject.Classes;
 using GYProject.Classes.userAll;
 using System;
@@ -29,14 +28,14 @@ namespace GYHandMade
             User us = userDB.GetUserById(3016);
             us.AddAmountToGoals(4, 100, "Espece");*/
 
-            //User user = new User("youssef", "youssef", "youssef", "youssef",null);
+           // User user = new User("nihal", "nihal", "nihal", "nihal", null);
             //user.AddUser();
 
 
             SetProcessDPIAware();
               Application.EnableVisualStyles();
               Application.SetCompatibleTextRenderingDefault(false);
-              Application.Run(new       Login());
+             Application.Run(new  Login());
 
             //HII YOUSSEFFFFF
         }

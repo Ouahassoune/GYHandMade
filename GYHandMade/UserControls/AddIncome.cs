@@ -14,7 +14,7 @@ namespace GYHandMade.UserControls
 {
     public partial class AddIncome : UserControl
     { 
-        internal User user = null;
+        internal User user = new User();
         public new ImageLayout BackgroundImageLayout { get; set; } = ImageLayout.Stretch;
         private string selectedCategory = "";
         public AddIncome()

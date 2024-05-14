@@ -169,7 +169,7 @@
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "Moz";
             this.Size = new System.Drawing.Size(314, 200);
-            this.Load += new System.EventHandler(this.Moz_Load_1);
+           // this.Load += new System.EventHandler(this.Moz_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.closebutton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);

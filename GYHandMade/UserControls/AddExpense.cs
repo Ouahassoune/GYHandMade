@@ -102,7 +102,7 @@ namespace GYHandMade.UserControls
             {
                 // Load the circular border image from file
 
-                Image borderImage = Image.FromFile("C:\\Users\\Pc\\Desktop\\GI2_S4\\.Net\\8_youss\\GYHandMade\\category\\bb.png");
+                Image borderImage = Image.FromFile("D:/GYHandMade/GYHandMade/category/bb.png");
 
                 // Set the layout mode of the background image
                 clickedPictureBox.BackgroundImageLayout = BackgroundImageLayout;
