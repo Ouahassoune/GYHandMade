@@ -81,7 +81,6 @@ namespace GYHandMade
 
         }
 
-
           internal void RemplirChamps()
             {
             // Récupérer les trois dernières transactions de l'utilisateur

@@ -22,11 +22,13 @@ namespace GYHandMade
             InitializeComponent();
             panel1.BackColor = Color.Transparent; // Définir la couleur de fond du Panel comme transparent
             this.FormBorderStyle = FormBorderStyle.None;
+            panel3.BackColor = Color.FromArgb(160, 137, 245);
+            panel3.SendToBack();
 
             // pour que les autre composant de panel n'herite pas de panel1
             panel1.Paint += (sender, e) =>
             {
-                using (SolidBrush brush = new SolidBrush(Color.FromArgb(100, Color.White))) // 100 est l'opacité (transparence)
+                using (SolidBrush brush = new SolidBrush(Color.FromArgb(100, Color.Black))) // 100 est l'opacité (transparence)
                 {
                     e.Graphics.FillRectangle(brush, panel1.ClientRectangle); // Dessiner le fond semi-transparent
                 }
@@ -34,7 +36,7 @@ namespace GYHandMade
             //Définir les coins arrondis pour le Panel
             SetRoundedCorners(panel2, 20, 100, 20, 100);
             SetRoundedCorners(panel1, 20, 20, 20, 20);
-            panel2.BackColor = Color.FromArgb(100, Color.White); // 100 est l'opacité (transparence)
+            panel2.BackColor = Color.FromArgb(100, Color.Black); // 100 est l'opacité (transparence)
                                                                  // Assurez-vous que votre TextBox est nommé input1 dans votre formulaire
             guna2TextBox1.PasswordChar = '*';
             guna2TextBox1.IconLeft = Resource1.right;
