@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -179,17 +181,29 @@ namespace GYProject.Classes.userAll
         }
 
 
-        internal static int AddUserWithComptes(User user, Compte compte1, Compte compte2)
+      internal static int AddUserWithComptes(User user, Compte compte1, Compte compte2)
         {
+            int userId = -1; // Initialiser l'ID de l'utilisateur à -1
+
             try
             {
-                // Insérer l'utilisateur dans la table "Users"
-                string queryUser = $"INSERT INTO users (nom, prenom, password,email) VALUES ('{user.nom}', '{user.prenom}', '{user.email}', '{user.password}')";
-                DatabaseManager.Instance.ExecuteNonQuery(queryUser);
+                // Insérer l'utilisateur dans la table "Users" en incluant le paramètre pour la photo
+                // Construire le dictionnaire de paramètres
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("@nom", user.nom);
+                parameters.Add("@prenom", user.prenom);
+                parameters.Add("@password", user.password);
+                parameters.Add("@email", user.email);
+                parameters.Add("@photo", user.img); // Assurez-vous que user.img est un tableau d'octets (byte[])
+
+                // Exécuter la requête SQL avec les paramètres
+                string queryUser = "INSERT INTO users (nom, prenom, password, email, photo) VALUES (@nom, @prenom, @password, @email, @photo)";
+                DatabaseManager.Instance.ExecuteQuery3(queryUser, parameters);
+
 
                 // Obtenir l'ID de l'utilisateur nouvellement inséré
                 string queryUserId = $"SELECT MAX(Id) FROM Users";
-                int userId = Convert.ToInt32(DatabaseManager.Instance.ExecuteScalar(queryUserId));
+                userId = Convert.ToInt32(DatabaseManager.Instance.ExecuteScalar(queryUserId));
 
                 // Insérer les comptes associés à l'utilisateur dans la table "Compte"
                 string queryCompte1 = $"INSERT INTO Compte (Nom, Solde, idUser) VALUES ('{compte1.Nom}', {compte1.Solde}, {userId})";
@@ -203,8 +217,19 @@ namespace GYProject.Classes.userAll
             {
                 Console.WriteLine("Erreur lors de l'ajout de l'utilisateur et des comptes : " + ex.Message);
             }
+
             return userId;
         }
+
+        // Méthode pour convertir une image en tableau d'octets
+        /*   private static byte[] ImageToByteArray(Image image)
+           {
+               using (MemoryStream ms = new MemoryStream())
+               {
+                   image.Save(ms, ImageFormat.Png); // Vous pouvez spécifier un format différent si nécessaire
+                   return ms.ToArray();
+               }
+           }*/
 
 
         // Méthode pour verifier si user existe ou pas 
@@ -214,10 +239,15 @@ namespace GYProject.Classes.userAll
             try
             {
                 // Construction de la requête SQL pour rechercher l'utilisateur par nom d'utilisateur et mot de passe
-                string query = $"SELECT * FROM users WHERE Email = '{mail}' AND Password = '{motDePasse}'";
+                string query = $"SELECT id, nom, prenom, email, password, photo FROM users WHERE Email = @mail AND Password = @password";
+
+                // Création d'un dictionnaire de paramètres
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("@mail", mail);
+                parameters.Add("@password", motDePasse);
 
                 // Exécution de la requête à l'aide de la classe DatabaseManager et récupération des résultats
-                DataTable dataTable = DatabaseManager.Instance.ExecuteQuery(query);
+                DataTable dataTable = DatabaseManager.Instance.ExecuteQuery3(query, parameters);
 
                 // Vérification s'il y a des lignes retournées
                 if (dataTable.Rows.Count > 0)
@@ -231,8 +261,16 @@ namespace GYProject.Classes.userAll
                     user.email = row["email"].ToString();
                     user.password = row["password"].ToString();
                     // Récupération des données binaires de la colonne image
-                    byte[] imageData = row["photo"] as byte[];
-                    user.img = imageData;
+                    if (row["photo"] != DBNull.Value)
+                    {
+                        Console.WriteLine("image nest  pas vide");
+
+                        user.img = (byte[])row["photo"];
+                        Console.WriteLine("image est "+user.img);
+
+                    }
+                    Console.WriteLine("image  vide");
+
                 }
             }
             catch (Exception ex)
@@ -241,7 +279,17 @@ namespace GYProject.Classes.userAll
             }
             return user;
         }
+        public byte[] ConvertImageToBytes(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                // Sauvegarder l'image dans un flux mémoire
+                image.Save(ms, image.RawFormat);
 
+                // Retourner le tableau de bytes de l'image
+                return ms.ToArray();
+            }
+        }
         internal static List<Transaction> GetRecentTransactions(int userId)
         {
             // Obtenir la date d'aujourd'hui
@@ -666,7 +714,7 @@ namespace GYProject.Classes.userAll
                 Console.WriteLine("Erreur lors de l'effectuation de la transaction : " + ex.Message);
             }
         }
-
+        
         internal static List<Goal> AllGoals(int userId)
         {
             List<Goal> goals = new List<Goal>();

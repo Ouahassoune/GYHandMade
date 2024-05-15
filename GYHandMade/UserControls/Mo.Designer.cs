@@ -70,7 +70,7 @@
             this.guna2GradientTileButton1.Size = new System.Drawing.Size(165, 39);
             this.guna2GradientTileButton1.TabIndex = 50;
             this.guna2GradientTileButton1.Text = "ADD";
-            this.guna2GradientTileButton1.Click += new System.EventHandler(this.guna2GradientTileButton1_Click_1);
+         //   this.guna2GradientTileButton1.Click += new System.EventHandler(this.guna2GradientTileButton1_Click_1);
             // 
             // Label1
             // 

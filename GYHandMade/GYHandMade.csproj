@@ -99,9 +99,7 @@
   <ItemGroup>
     <Compile Include="Classes\CompteAll\Compte.cs" />
     <Compile Include="Classes\CompteAll\CompteDB.cs" />
-
     <Compile Include="Classes\Goal\Goal.cs" />
-
     <Compile Include="Classes\TransactionAll\Transaction.cs" />
     <Compile Include="Classes\TransactionAll\TransactionDB.cs" />
     <Compile Include="Classes\userAll\User.cs" />
@@ -129,6 +127,12 @@
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Logup.Designer.cs">
+      <DependentUpon>Logup.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -255,6 +259,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logup.resx">
+      <DependentUpon>Logup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -266,7 +273,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Resource1.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -324,8 +331,8 @@
     <EmbeddedResource Include="UserControls\UHistory.resx">
       <DependentUpon>UHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="bin\Debug\Report1.rdlc" />
-    <None Include="bin\Debug\Report2.rdlc" />
+    <None Include="bin\Debug\Report1 .rdlc" />
+    <None Include="bin\Debug\Report2 %281%29.rdlc" />
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -353,6 +360,22 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\Blue 3D Finance Management Tips Infographic %28600 x 700 px%29.png" />
+    <None Include="Resources\closedEy.bmp" />
+    <None Include="Resources\Image1.png" />
+    <None Include="Resources\eye-crossed %281%29.png" />
+    <None Include="Resources\eye.png" />
+    <None Include="Resources\eye %281%29.png" />
+    <None Include="Resources\google.png" />
+    <None Include="Resources\right.png" />
+    <None Include="Resources\1.jpg" />
+    <None Include="Resources\undraw_subscriptions_re_k7jj.png" />
+    <None Include="Resources\Blue 3D Finance Management Tips Infographic %28600 x 700 px%29 %28300 x 700 px%29 %28100 x 100 px%29 %282%29.png" />
+    <None Include="Resources\1.png" />
+    <None Include="Resources\11.png" />
+    <None Include="Resources\12.png" />
+    <None Include="Resources\2.png" />
+    <None Include="Resources\Blue 3D Finance Management Tips Infographic %28600 x 700 px%29 %28300 x 700 px%29 %28100 x 100 px%29 %284%29.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll" />
     <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />

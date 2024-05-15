@@ -165,7 +165,7 @@ namespace GYProject.Classes.userAll
 
         // *********************Goalss **************//
 
-        public void AddAmountToGoals(int idGoal, decimal montant, string nameOfCompte)
+      /*  public void AddAmountToGoals(int idGoal, decimal montant, string nameOfCompte)
         {
             Goal.AddAmountToGoals(idGoal, montant, this.id,  nameOfCompte);
 
@@ -181,7 +181,7 @@ namespace GYProject.Classes.userAll
             return Goal.GetAllGoalsByUserId(this.id);
         }
 
-
+        */
 
     }
 }

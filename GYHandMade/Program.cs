@@ -1,4 +1,3 @@
-using GYHandMade.Classes.Goals;
 using GYProject.Classes;
 using GYProject.Classes.userAll;
 using System;

@@ -63,9 +63,50 @@ namespace GYHandMade.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Blue_3D_Finance_Management_Tips_Infographic__600_x_700_px_ {
+            get {
+                object obj = ResourceManager.GetObject("Blue 3D Finance Management Tips Infographic (600 x 700 px)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Blue_3D_Finance_Management_Tips_Infographic__600_x_700_px___300_x_700_px___100_x_100_px___2_ {
+            get {
+                object obj = ResourceManager.GetObject("Blue 3D Finance Management Tips Infographic (600 x 700 px) (300 x 700 px) (100 x " +
+                        "100 px) (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eye_crossed__1_ {
+            get {
+                object obj = ResourceManager.GetObject("eye-crossed (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_car_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-car-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap undraw_subscriptions_re_k7jj {
+            get {
+                object obj = ResourceManager.GetObject("undraw_subscriptions_re_k7jj", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

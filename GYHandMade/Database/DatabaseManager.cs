@@ -8,7 +8,7 @@ namespace GYProject.Database
     internal class DatabaseManager
     {
         private static DatabaseManager _instance;
-        private string _connectionString = "Data Source=DESKTOP-DMLR2AM;Initial Catalog=Test2;Integrated Security=True";
+        private string _connectionString = "Data Source=DESKTOP-MUD0CQV\\SQLEXPRESS;Initial Catalog=Test2;Integrated Security=True";
 
         // Empêche l'instanciation en dehors de cette classe
         private DatabaseManager() { }
@@ -179,6 +179,36 @@ namespace GYProject.Database
             }
 
             return rowsAffected;
+        }
+        public object[] ExecuteRow(string query)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    SqlCommand command = new SqlCommand(query, connection);
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        object[] row = new object[reader.FieldCount];
+                        reader.GetValues(row);
+                        Console.WriteLine("Success: Row fetched successfully.");
+                        return row;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: No rows found.");
+                        return null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return null;
+            }
         }
 
     }

@@ -70,6 +70,7 @@ namespace GYHandMade.UserControls
                 // Inform the user to select a category
                 MessageBox.Show("Please select a category.");
             }
+            //RemplirChamps();
         }
 
         private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
