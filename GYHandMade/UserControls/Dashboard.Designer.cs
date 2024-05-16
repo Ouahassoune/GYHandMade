@@ -60,15 +60,15 @@ namespace GYHandMade.UserControls
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.bunifuChartCanvas1 = new Bunifu.Charts.WinForms.BunifuChartCanvas();
             this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel6 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse8 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.bunifuChartCanvas1 = new Bunifu.Charts.WinForms.BunifuChartCanvas();
             this.bunifuDoughnutChart1 = new Bunifu.Charts.WinForms.ChartTypes.BunifuDoughnutChart(this.components);
-            this.label5 = new System.Windows.Forms.Label();
             bunifuLineChart1 = new Bunifu.Charts.WinForms.ChartTypes.BunifuLineChart(this.components);
             bunifuLineChart2 = new Bunifu.Charts.WinForms.ChartTypes.BunifuLineChart(this.components);
             this.panel5.SuspendLayout();
@@ -515,41 +515,16 @@ namespace GYHandMade.UserControls
             this.panel1.TabIndex = 34;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // guna2Elipse5
+            // label5
             // 
-            this.guna2Elipse5.BorderRadius = 36;
-            this.guna2Elipse5.TargetControl = this.panel1;
-            // 
-            // guna2Elipse6
-            // 
-            this.guna2Elipse6.BorderRadius = 35;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.bunifuChartCanvas2);
-            this.panel6.Controls.Add(this.label6);
-            this.panel6.Location = new System.Drawing.Point(822, 900);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(995, 563);
-            this.panel6.TabIndex = 37;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(17, 20);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(308, 40);
-            this.label6.TabIndex = 38;
-            this.label6.Text = "Income By Month";
-            // 
-            // guna2Elipse7
-            // 
-            this.guna2Elipse7.BorderRadius = 35;
-            this.guna2Elipse7.TargetControl = this.panel6;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label5.Location = new System.Drawing.Point(28, 41);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(386, 40);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Expenses By Category";
             // 
             // bunifuChartCanvas1
             // 
@@ -620,6 +595,42 @@ namespace GYHandMade.UserControls
             this.bunifuChartCanvas1.YAxesZeroLineWidth = 1;
             this.bunifuChartCanvas1.Load += new System.EventHandler(this.bunifuChartCanvas1_Load_1);
             // 
+            // guna2Elipse5
+            // 
+            this.guna2Elipse5.BorderRadius = 36;
+            this.guna2Elipse5.TargetControl = this.panel1;
+            // 
+            // guna2Elipse6
+            // 
+            this.guna2Elipse6.BorderRadius = 35;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.bunifuChartCanvas2);
+            this.panel6.Controls.Add(this.label6);
+            this.panel6.Location = new System.Drawing.Point(822, 900);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(995, 563);
+            this.panel6.TabIndex = 37;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label6.Location = new System.Drawing.Point(17, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(308, 40);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "Income By Month";
+            // 
+            // guna2Elipse7
+            // 
+            this.guna2Elipse7.BorderRadius = 35;
+            this.guna2Elipse7.TargetControl = this.panel6;
+            // 
             // bunifuDoughnutChart1
             // 
             this.bunifuDoughnutChart1.BackgroundColor = ((System.Collections.Generic.List<System.Drawing.Color>)(resources.GetObject("bunifuDoughnutChart1.BackgroundColor")));
@@ -631,17 +642,6 @@ namespace GYHandMade.UserControls
             this.bunifuDoughnutChart1.HoverBorderWidth = 0;
             this.bunifuDoughnutChart1.Label = "label here";
             this.bunifuDoughnutChart1.TargetCanvas = this.bunifuChartCanvas1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(28, 41);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(386, 40);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "Expenses By Category";
             // 
             // Dashboard
             // 
