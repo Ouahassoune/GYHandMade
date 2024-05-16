@@ -415,6 +415,8 @@ namespace GYProject.Classes.userAll
                     transaction.Montant = Convert.ToDecimal(row["Montant"]);
                     transaction.Date = Convert.ToDateTime(row["Date"]);
                     transaction.Type = row["Type"].ToString();
+                    transaction.category = row["category"].ToString();
+
                     transactions.Add(transaction);
                 }
 
