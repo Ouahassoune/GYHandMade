@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,26 +28,46 @@ namespace GYHandMade
         internal Form1(User use,Dashboard uds, ToHistory UHistory, AddCompte ompte, AddTransaction UAddTransaction)
         {
             InitializeComponent();
+            // Vérifier si l'utilisateur a une image
+            Console.WriteLine("userrr1 imagge est" + use.img);
 
+            if (use.img != null )
+            {
+                Console.WriteLine("userrr2 imagge est" + use.img);
+                // Convertir le tableau d'octets en une image
+                using (MemoryStream ms = new MemoryStream(use.img))
+                {
+                    guna2PictureBox9.Image = Image.FromStream(ms);
+                }
+            }
+            else
+            {
+                Console.WriteLine("userrr3 imagge est" + use.img);
+
+                // Si l'utilisateur n'a pas d'image, vous pouvez définir une image par défaut ou ne rien faire
+                guna2PictureBox9.Image = Resource1.eye_crossed__1_;//(votre image par défaut);
+            }
             // Définir l'utilisateur avant de créer le Dashboard UserControl
             this.user = use;
-            this.Udashboard = uds;
-            this.UAddTransaction = UAddTransaction;
-            this.UCompte = ompte;
+                this.Udashboard = uds;
+                this.UAddTransaction = UAddTransaction;
+                this.UCompte = ompte;
+
+                this.UAddTransaction = UAddTransaction;
+                this.UHistory = UHistory;
+                // Créer une instance de Dashboard UserControl
+
+                // Passer l'utilisateur au Dashboard UserControl
+
+                // Ajouter le Dashboard UserControl au formulaire principal
+                MainPanel.Controls.Add(Udashboard);
+                Udashboard.Dock = DockStyle.Fill;
+
+                label2.Text = "Hello, " + user.nom + "!";
+
+                //lastTransaction();
+                RemplirChamps();
             
-            this.UAddTransaction = UAddTransaction;
-            this.UHistory = UHistory;
-            // Créer une instance de Dashboard UserControl
-
-            // Passer l'utilisateur au Dashboard UserControl
-
-            // Ajouter le Dashboard UserControl au formulaire principal
-            MainPanel.Controls.Add(Udashboard);
-            Udashboard.Dock = DockStyle.Fill;
-
-            label2.Text = "Hello, " + user.nom + "!";
-
-            lastTransaction();
 
         }
         internal void  setUdashboard(UserControls.Dashboard udashboard)
@@ -59,6 +80,37 @@ namespace GYHandMade
             this.user = use;
 
         }
+
+          internal void RemplirChamps()
+            {
+            // Récupérer les trois dernières transactions de l'utilisateur
+            List<Transaction> lastTransactions = this.user.FuturTransactions();
+
+            // Vérifier si le nombre de transactions est égal à 2
+            if (lastTransactions.Count > 0)
+            {
+                // Remplir les champs pour la première transaction
+                prix1.Text = "-$" + lastTransactions[0].Montant.ToString();
+                    catg1.Text = lastTransactions[0].category;
+                    dt1.Text = lastTransactions[0].Date.ToShortDateString();
+            }
+
+            // Vérifier si la liste contient au moins trois transactions
+           else if (lastTransactions.Count > 2)
+            {
+                // Remplir les champs pour la deuxième transaction
+                prix2.Text = "-$"+lastTransactions[1].Montant.ToString();
+                catg2.Text = lastTransactions[1].category;
+                dt2.Text = lastTransactions[1].Date.ToShortDateString(); 
+                }
+                else
+                {
+                    // Afficher un message d'erreur ou prendre une autre action appropriée
+                    Console.WriteLine("Le nombre de transactions retournées n'est pas égal à 2.");
+                }
+            }
+        
+
 
         //remplir la liste des 3 transactions les plus recentes
         public void lastTransaction()
@@ -146,7 +198,7 @@ namespace GYHandMade
             // Add the dashboard user control to the form
             MainPanel.Controls.Add(UHistory);
             UHistory.Dock = DockStyle.Fill;
-            UHistory.setUser(user);
+           
         }
 
         private void MainPanel_Paint(object sender, PaintEventArgs e)
@@ -190,6 +242,16 @@ namespace GYHandMade
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
         {
 
         }

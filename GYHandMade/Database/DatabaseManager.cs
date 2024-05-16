@@ -8,7 +8,7 @@ namespace GYProject.Database
     internal class DatabaseManager
     {
         private static DatabaseManager _instance;
-        private string _connectionString = "Data Source=DESKTOP-DMLR2AM;Initial Catalog=Test2;Integrated Security=True";
+        private string _connectionString = "Data Source=DESKTOP-MUD0CQV\\SQLEXPRESS;Initial Catalog=Test2;Integrated Security=True";
 
         // Empêche l'instanciation en dehors de cette classe
         private DatabaseManager() { }

@@ -42,19 +42,19 @@ namespace GYHandMade.UserControls
         {
 
         }
-        public void SetHistoryData( Transaction historyItem)
+        public void SetHistoryData(Transaction historyItem)
         {
 
             // Set properties of the UHistory control based on the provided history item
 
             Typep = historyItem.Type;
-            
+
             Description = historyItem.Description;
             Date = historyItem.Date;
             Montant = historyItem.Montant;
             //category = historyItem.category;
             category = "Gym";
-            
+
 
             // Set the text color based on the type
             if (Typep == "revenu")
@@ -83,7 +83,7 @@ namespace GYHandMade.UserControls
             if (categoryPicturePaths.ContainsKey(category))
             {
                 string picturePath = categoryPicturePaths[category];
-               // pictureBox.Image = Image.FromFile(picturePath);
+                // pictureBox.Image = Image.FromFile(picturePath);
             }
             else
             {

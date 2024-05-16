@@ -62,8 +62,6 @@ namespace GYHandMade.UserControls
 
 
 
-      
-
 
             private void guna2GradientTileButton1_Click_1(object sender, EventArgs e)
             {
@@ -74,7 +72,8 @@ namespace GYHandMade.UserControls
                 cmp.remplirLabels();
 
 
-            }
+        private void Mo_Load_1(object sender, EventArgs e)
+        {        }
+    }
+}
 
-     
-    } }

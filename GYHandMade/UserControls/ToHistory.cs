@@ -55,7 +55,7 @@ namespace GYHandMade.UserControls
         {
             // Assuming you have a method to retrieve history items from the database
 
-            if (user.AllTransaction()!=null)
+            if (this.user.AllTransaction()!=null)
             {
 
 
