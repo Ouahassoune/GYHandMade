@@ -463,6 +463,8 @@ namespace GYProject.Classes.userAll
                     transaction.Montant = Convert.ToDecimal(row["Montant"]);
                     transaction.Date = Convert.ToDateTime(row["Date"]);
                     transaction.Type = row["Type"].ToString();
+                    transaction.category = row["category"].ToString();
+
                     transactions.Add(transaction);
                 }
 
@@ -660,8 +662,7 @@ namespace GYProject.Classes.userAll
         }
 
 
-
-        internal static void EffectuerTransaction(Transaction transaction, string nameOfCompte, int idUser)
+       internal static void EffectuerTransaction(Transaction transaction, string nameOfCompte, int idUser)
         {
             try
             {
@@ -714,7 +715,7 @@ namespace GYProject.Classes.userAll
                 Console.WriteLine("Erreur lors de l'effectuation de la transaction : " + ex.Message);
             }
         }
-        
+
         internal static List<Goal> AllGoals(int userId)
         {
             List<Goal> goals = new List<Goal>();

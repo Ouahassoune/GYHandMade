@@ -63,11 +63,10 @@
             this.guna2GradientTileButton1.Font = new System.Drawing.Font("Century Gothic", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientTileButton1.ForeColor = System.Drawing.Color.White;
             this.guna2GradientTileButton1.HoverState.Parent = this.guna2GradientTileButton1;
-            this.guna2GradientTileButton1.Location = new System.Drawing.Point(64, 127);
-            this.guna2GradientTileButton1.Margin = new System.Windows.Forms.Padding(1);
+            this.guna2GradientTileButton1.Location = new System.Drawing.Point(170, 303);
             this.guna2GradientTileButton1.Name = "guna2GradientTileButton1";
             this.guna2GradientTileButton1.ShadowDecoration.Parent = this.guna2GradientTileButton1;
-            this.guna2GradientTileButton1.Size = new System.Drawing.Size(165, 39);
+            this.guna2GradientTileButton1.Size = new System.Drawing.Size(439, 93);
             this.guna2GradientTileButton1.TabIndex = 50;
             this.guna2GradientTileButton1.Text = "ADD";
          //   this.guna2GradientTileButton1.Click += new System.EventHandler(this.guna2GradientTileButton1_Click_1);
@@ -77,10 +76,9 @@
             this.Label1.AutoSize = true;
             this.Label1.BackColor = System.Drawing.Color.Transparent;
             this.Label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1.Location = new System.Drawing.Point(90, 33);
-            this.Label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.Label1.Location = new System.Drawing.Point(241, 78);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(109, 19);
+            this.Label1.Size = new System.Drawing.Size(267, 47);
             this.Label1.TabIndex = 49;
             this.Label1.Text = "Add Amount";
             // 
@@ -105,15 +103,15 @@
             this.inputTextBox.HoverState.Parent = this.inputTextBox;
             this.inputTextBox.IconLeft = ((System.Drawing.Image)(resources.GetObject("inputTextBox.IconLeft")));
             this.inputTextBox.IconLeftSize = new System.Drawing.Size(42, 42);
-            this.inputTextBox.Location = new System.Drawing.Point(44, 69);
-            this.inputTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inputTextBox.Location = new System.Drawing.Point(117, 165);
+            this.inputTextBox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.inputTextBox.Name = "inputTextBox";
-            this.inputTextBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.inputTextBox.Padding = new System.Windows.Forms.Padding(11, 12, 11, 12);
             this.inputTextBox.PasswordChar = '\0';
             this.inputTextBox.PlaceholderText = "Enter Amount to Add";
             this.inputTextBox.SelectedText = "";
             this.inputTextBox.ShadowDecoration.Parent = this.inputTextBox;
-            this.inputTextBox.Size = new System.Drawing.Size(209, 46);
+            this.inputTextBox.Size = new System.Drawing.Size(558, 110);
             this.inputTextBox.TabIndex = 48;
             // 
             // guna2Elipse3
@@ -126,10 +124,9 @@
             this.closebutton.BackColor = System.Drawing.Color.Transparent;
             this.closebutton.Image = ((System.Drawing.Image)(resources.GetObject("closebutton.Image")));
             this.closebutton.ImageActive = null;
-            this.closebutton.Location = new System.Drawing.Point(267, 11);
-            this.closebutton.Margin = new System.Windows.Forms.Padding(1);
+            this.closebutton.Location = new System.Drawing.Point(711, 26);
             this.closebutton.Name = "closebutton";
-            this.closebutton.Size = new System.Drawing.Size(24, 17);
+            this.closebutton.Size = new System.Drawing.Size(64, 40);
             this.closebutton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.closebutton.TabIndex = 51;
             this.closebutton.TabStop = false;
@@ -141,10 +138,9 @@
             this.bunifuImageButton6.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton6.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton6.Image")));
             this.bunifuImageButton6.ImageActive = null;
-            this.bunifuImageButton6.Location = new System.Drawing.Point(195, -27);
-            this.bunifuImageButton6.Margin = new System.Windows.Forms.Padding(1);
+            this.bunifuImageButton6.Location = new System.Drawing.Point(521, -65);
             this.bunifuImageButton6.Name = "bunifuImageButton6";
-            this.bunifuImageButton6.Size = new System.Drawing.Size(24, 17);
+            this.bunifuImageButton6.Size = new System.Drawing.Size(64, 40);
             this.bunifuImageButton6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton6.TabIndex = 47;
             this.bunifuImageButton6.TabStop = false;
@@ -155,10 +151,9 @@
             this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(16, 81);
-            this.bunifuImageButton1.Margin = new System.Windows.Forms.Padding(1);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(43, 192);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(24, 35);
+            this.bunifuImageButton1.Size = new System.Drawing.Size(64, 83);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton1.TabIndex = 52;
             this.bunifuImageButton1.TabStop = false;
@@ -166,7 +161,7 @@
             // 
             // Mo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.bunifuImageButton1);
@@ -175,10 +170,8 @@
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.inputTextBox);
             this.Controls.Add(this.bunifuImageButton6);
-            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "Mo";
-            this.Size = new System.Drawing.Size(298, 197);
-            this.Load += new System.EventHandler(this.Mo_Load_1);
+            this.Size = new System.Drawing.Size(794, 469);
             ((System.ComponentModel.ISupportInitialize)(this.closebutton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
